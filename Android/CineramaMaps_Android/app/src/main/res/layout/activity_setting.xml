@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="user"
+            type="main.com.cineramamaps.model.UserDetails" />
+    </data>
+
+    <RelativeLayout
+        android:layoutDirection="ltr"
+        android:fitsSystemWindows="true"
+        android:focusableInTouchMode="true"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimary"
+            android:visibility="visible">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/exit_app_but"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                app:cardCornerRadius="40dp">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/back"
+                    android:backgroundTint="@color/colorPrimary" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <main.com.cineramamaps.customfont.BoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/settings"
+                android:textColor="@color/white"
+                android:textSize="@dimen/large"
+                android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+
+            <RelativeLayout
+                android:id="@+id/cart"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/fav"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/mycart" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fav"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/notification_bell" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_below="@id/mainlay"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <LinearLayout
+
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/edit_round_dra"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/imgselection"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userimage"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/profile_ic"></de.hdodenhof.circleimageview.CircleImageView>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/namelay"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/imgselection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="70dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/usernametv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/profile"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:id="@+id/useremailtv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/usernametv"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18dp"></TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/profilelay"
+android:layout_alignParentEnd="true"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/editimg"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="0dp"
+                    android:src="@drawable/editnew_icon"
+                    android:textSize="18dp"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editimg"
+                    android:gravity="center_horizontal"
+                    android:text="@string/edit"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/grey_new"
+                    android:textSize="15dp"></TextView>
+            </RelativeLayout>
+
+            <main.com.cineramamaps.customfont.BoldTextView
+                android:id="@+id/referraltv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="18dp"></main.com.cineramamaps.customfont.BoldTextView>
+        </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_margin="15dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/edit_round_dra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/aboutlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:visibility="gone"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/lightgrey"></View>
+
+                            <ImageView
+                                android:id="@+id/v123"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+android:tint="#E25E14"
+                                android:src="@drawable/aboutimg"></ImageView>
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@id/v123"
+                                android:text="@string/about"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+                            <ImageView
+                                android:id="@+id/f123"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:rotation="180"
+                                android:src="@drawable/ic_back"
+                                android:tint="#6D6D6D"></ImageView>
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:visibility="visible"
+                            android:id="@+id/termlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="0dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:visibility="gone"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/lightgrey"></View>
+
+                            <ImageView
+                                android:id="@+id/v1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+
+                                android:src="@drawable/termicon"></ImageView>
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@id/v1"
+                                android:text="@string/termcon"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+                            <ImageView
+                                android:id="@+id/f1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:rotation="180"
+                                android:src="@drawable/ic_back"
+                                android:tint="#6D6D6D"></ImageView>
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/historylay"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+                            <View
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/lightgrey"></View>
+
+                            <ImageView
+                                android:id="@+id/v500"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:src="@drawable/privacyicon"
+                                ></ImageView>
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@id/v500"
+                                android:text="@string/privacydata"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+                            <ImageView
+                                android:id="@+id/f500"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:rotation="180"
+                                android:tint="#6D6D6D"
+                                android:src="@drawable/ic_back"></ImageView>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/subscriptionlay"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <View
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/lightgrey"></View>
+
+                            <ImageView
+                                android:id="@+id/v3"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:src="@drawable/subscribeicon"></ImageView>
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@id/v3"
+                                android:text="@string/subscriptions"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+                            <ImageView
+                                android:id="@+id/f3"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:rotation="180"
+                                android:tint="#6D6D6D"
+                                android:src="@drawable/ic_back"></ImageView>
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/changelanglay"
+                            android:layout_marginBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+                            <View
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/lightgrey"></View>
+
+                            <ImageView
+                                android:id="@+id/v05"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:src="@drawable/changelangicon"
+                                android:tint="#E25E14"></ImageView>
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@id/v05"
+                                android:text="@string/changelanguage"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+                            <ImageView
+                                android:id="@+id/f05"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:rotation="180"
+                                android:tint="#6D6D6D"
+                                android:src="@drawable/ic_back"></ImageView>
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:visibility="gone"
+                            android:id="@+id/changepasswordlay"
+                            android:layout_marginBottom="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+                            <View
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/lightgrey"></View>
+
+                            <ImageView
+                                android:id="@+id/v5"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:src="@drawable/password"
+                                android:tint="#E25E14"></ImageView>
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@id/v5"
+                                android:text="@string/changepassword"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+                            <ImageView
+                                android:id="@+id/f5"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:rotation="180"
+                                android:tint="#6D6D6D"
+                                android:src="@drawable/ic_back"></ImageView>
+
+                        </RelativeLayout>
+
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_margin="15dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/edit_round_dra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/shareapplay"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:visibility="gone"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/lightgrey"></View>
+
+                            <ImageView
+                                android:id="@+id/v01"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+
+                                android:src="@drawable/ratingicon"></ImageView>
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@id/v01"
+                                android:text="@string/applicationrating"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+                            <ImageView
+                                android:id="@+id/f01"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:rotation="180"
+                                android:src="@drawable/ic_back"
+                                android:tint="#6D6D6D"></ImageView>
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/helplay"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="10dp">
+                            <View
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/lightgrey"></View>
+
+                            <ImageView
+                                android:id="@+id/v4"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:tint="#E25E14"
+                                android:src="@drawable/contacticon"></ImageView>
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@id/v4"
+                                android:text="@string/contactusnew"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+                            <ImageView
+                                android:id="@+id/f4"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:rotation="180"
+                                android:tint="#6D6D6D"
+                                android:src="@drawable/ic_back"></ImageView>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:visibility="gone"
+                            android:id="@+id/deletelay"
+                            android:layout_marginBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+                            <View
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/lightgrey"></View>
+
+                            <ImageView
+                                android:id="@+id/v40"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:tint="#E25E14"
+                                android:src="@drawable/delete"></ImageView>
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@id/v40"
+                                android:text="@string/deleteaccount"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+                            <ImageView
+                                android:id="@+id/f41"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:rotation="180"
+                                android:tint="#6D6D6D"
+                                android:src="@drawable/ic_back"></ImageView>
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="horizontal"
+                        >
+                        <ImageView
+                            android:id="@+id/instalay"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/social_insta"></ImageView>
+                        <ImageView
+                            android:id="@+id/tiktoklay"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/social_music"></ImageView>
+                        <ImageView
+                            android:id="@+id/snaplay"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/social_chat"></ImageView>
+                        <ImageView
+                            android:id="@+id/twitterlay"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/social_cross"></ImageView>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/logouttv"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/button_round_dra">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/v42"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:src="@drawable/logoutnew"
+                                android:tint="#ffffff"></ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_toEndOf="@id/v42"
+                                android:text="@string/logout"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold"></TextView>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressbar"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></ProgressBar>
+    </RelativeLayout>
+
+</layout>

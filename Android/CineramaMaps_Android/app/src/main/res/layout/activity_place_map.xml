@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="ltr"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/botmlay">
+        <RelativeLayout
+            android:id="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="0dp"
+            android:background="@color/colorPrimary"
+            android:visibility="visible">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/exit_app_but"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                app:cardCornerRadius="40dp">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/back"
+                    android:backgroundTint="@color/colorPrimary" />
+
+            </androidx.cardview.widget.CardView>
+
+            <main.com.cineramamaps.customfont.BoldTextView
+                android:id="@+id/headtxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="0dp"
+                android:gravity="center"
+                android:text="@string/placedetails"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+
+            <RelativeLayout
+                android:id="@+id/cart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:visibility="gone"
+                android:layout_toStartOf="@+id/fav">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/cart" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fav"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone"
+                android:layout_marginEnd="10dp">
+
+                <ImageView
+                    android:id="@+id/favic"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/fav" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainlay">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/foodimage"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        android:src="@color/lightgrey"></ImageView>
+                    <RelativeLayout
+                        android:visibility="visible"
+                        android:id="@+id/maplay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <fragment
+
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </RelativeLayout>
+
+</RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+
+
+    </RelativeLayout>
+
+</layout>

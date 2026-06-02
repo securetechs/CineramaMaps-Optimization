@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layoutDirection="rtl"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/detaillay"
+            app:cardBackgroundColor="@color/screenback2"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="#9E464C">
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:id="@+id/titletv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toStartOf="@+id/arrwolay"
+                                android:gravity="center"
+                                android:text="How can i find the promotions ?"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/medium"
+                                android:textStyle="bold" />
+
+                            <RelativeLayout
+                                android:id="@+id/arrwolay"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="40dp"
+                                android:visibility="gone"
+                                android:layout_centerVertical="true"
+                                android:layout_height="40dp">
+
+                                <ImageView
+                                    android:id="@+id/arrowimg"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/downarow"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"></ImageView>
+
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                        <main.com.cineramamaps.customfont.RegularTextView
+                            android:visibility="gone"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/answertv"
+                            android:textSize="@dimen/small"
+                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Congue tempor, a sit accumsan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/notificaitonlist1"
+                            android:visibility="visible"
+                            android:layout_width="match_parent"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.LoginAct"
+    android:layoutDirection="rtl">
+
+        <RelativeLayout
+            android:background="@drawable/welcomeb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/mainlay"
+
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <RelativeLayout
+                    android:id="@+id/backbut"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp">
+
+                    <ImageView
+                        android:backgroundTint="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_back" />
+
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mainlay"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginRight="10dp"
+
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/backlay"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_back"
+                        android:tint="@color/toolbarcol"></ImageView>
+
+                </RelativeLayout>
+
+                <TextView
+
+                    android:id="@+id/skip_tv"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/button_round_dra"
+                    android:gravity="center"
+                    android:text="@string/skiplogin"
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/edit_round_dra"
+                        android:visibility="gone">
+
+                        <Spinner
+                            android:id="@+id/language_spinner"
+                            android:layout_width="110dp"
+                            android:layout_height="35dp"></Spinner>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="180dp"
+
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="70dp"
+                       ></ImageView>
+                </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/msgtv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image_but"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:text="@string/welcome"
+                    android:textColor="@color/slidetextcolor"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/msgtv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/msgtv"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:text="@string/welcomehead"
+                    android:textColor="@color/slidetextcolor"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:id="@+id/loginbut"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:background="@drawable/button_round_dra"
+                    android:text="@string/login"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium" />
+
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:id="@+id/signupbut"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:background="@drawable/button_round_dra"
+                    android:text="@string/signup"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium" />
+
+
+            </LinearLayout>
+            <ProgressBar
+                android:elevation="5dp"
+                android:visibility="gone"
+                android:id="@+id/progressbar"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ProgressBar>
+
+        </RelativeLayout>
+
+
+</layout>

@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layoutDirection="ltr">
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/mainlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/toolbarcol"
+                            android:visibility="visible">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/exit_app_but"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                app:cardCornerRadius="40dp">
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/back"
+                                    android:backgroundTint="@color/colorPrimary" />
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:id="@+id/headtxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/addplacetotable"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/large"
+                                android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="80dp"
+                        android:layout_marginEnd="20dp"
+                        android:orientation="vertical">
+
+                        <main.com.cineramamaps.customfont.BoldTextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/namecard"
+                            android:layout_alignLeft="@+id/namecard"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="start"
+                            android:text="@string/detailssubscription"
+
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="20dp"
+                                android:gravity="start"
+                                android:text="@string/type"
+                                android:textColor="@color/black"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="20dp"
+                                android:gravity="end"
+                                android:text="Standered"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="10dp"
+                                android:gravity="start"
+                                android:text="@string/duration"
+                                android:textColor="@color/black"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="10dp"
+                                android:gravity="end"
+                                android:text="Monthly"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="10dp"
+                                android:gravity="start"
+                                android:text="@string/total"
+                                android:textColor="@color/black"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:id="@+id/cartpricetv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="10dp"
+                                android:gravity="end"
+                                android:text="39 SR"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </RelativeLayout>
+
+                        <main.com.cineramamaps.customfont.BoldTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/namecard"
+                            android:layout_alignLeft="@+id/namecard"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="30dp"
+                            android:gravity="start"
+                            android:text="@string/promocode"
+                            android:textColor="@color/black"
+
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+                            android:id="@+id/entercodelay"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginBottom="30dp"
+                            android:background="@drawable/edit_round_dra"
+                            android:visibility="gone">
+
+                            <main.com.cineramamaps.customfont.RegularEditView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toStartOf="@+id/apply"
+                                android:background="@null"
+                                android:hint="@string/addpromocode"></main.com.cineramamaps.customfont.RegularEditView>
+
+                            <TextView
+                                android:id="@+id/apply"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="0dp"
+                                android:background="@drawable/button_round_dra"
+                                android:backgroundTint="@color/colorPrimary"
+                                android:gravity="center"
+                                android:text="@string/apply"
+                                android:textColor="@color/white"></TextView>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/savecardtxt2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/namecard"
+                            android:layout_alignLeft="@+id/namecard"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="0dp"
+                            android:text="xxxx xxxx xxxx xxxx"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="normal"
+                            android:visibility="gone" />
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/edt_cardnumber"
+                            android:layout_alignLeft="@+id/edt_cardnumber"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="50dp"
+                            android:text="@string/maptype"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                        <RelativeLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/edit_round_dra"
+                            android:imeOptions="actionNext"
+                            android:textColor="#000" >
+                            <Spinner
+                                android:id="@+id/typespi"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:imeOptions="actionNext"
+                                android:paddingStart="10dp"
+                                android:textColor="#000" />
+                        </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/mapnamelay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/namecard"
+                            android:layout_alignLeft="@+id/namecard"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="15dp"
+                            android:text="@string/entermapname"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <main.com.cineramamaps.customfont.RegularEditView
+                            android:id="@+id/mapnametv"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/edit_round_dra"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:textColor="#000" />
+
+                    </LinearLayout>
+<LinearLayout
+    android:id="@+id/extraitemlay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edt_cardnumber"
+        android:layout_alignLeft="@+id/edt_cardnumber"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/selectmapname"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_round_dra"
+        android:imeOptions="actionNext"
+        android:textColor="#000" >
+        <Spinner
+            android:id="@+id/typespi2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:imeOptions="actionNext"
+            android:paddingStart="10dp"
+            android:textColor="#000" />
+    </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/nameoncard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/namecard"
+                            android:layout_alignLeft="@+id/namecard"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="15dp"
+                            android:text="@string/thenameofthemap"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <main.com.cineramamaps.customfont.RegularEditView
+                            android:id="@+id/nametv"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/edit_round_dra"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:textColor="#000" />
+
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/edt_cardnumber"
+                            android:layout_alignLeft="@+id/edt_cardnumber"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="15dp"
+                            android:text="@string/location"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:visibility="gone"
+                            android:textStyle="bold" />
+
+                        <main.com.cineramamaps.customfont.RegularTextView
+                            android:id="@+id/addresstv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="50dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/edit_round_dra"
+                            android:hint="@string/selectaddress"
+                            android:imeOptions="actionNext"
+                            android:gravity="center_vertical"
+                            android:visibility="gone"
+                            android:paddingLeft="10dp"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/edt_cardnumber"
+                            android:layout_alignLeft="@+id/edt_cardnumber"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="15dp"
+                            android:text="@string/selectnumberofday"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/edit_round_dra"
+                            android:imeOptions="actionNext"
+                            android:textColor="#000" >
+                            <Spinner
+                                android:id="@+id/typespi1"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:imeOptions="actionNext"
+                                android:paddingStart="10dp"
+                                android:textColor="#000" />
+                        </RelativeLayout>
+</LinearLayout>
+                        <CheckBox
+                            android:id="@+id/checkbycinerama"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/atripbycineramamaps"></CheckBox>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <main.com.cineramamaps.customfont.RegularTextView
+                                    android:id="@+id/textView5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/expirydate"
+                                    android:textColor="@color/black" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="50dp"
+                                    android:layout_below="@+id/textView5"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/edit_round_dra"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+
+                                    android:paddingLeft="10dp">
+
+                                    <main.com.cineramamaps.customfont.RegularEditView
+                                        android:id="@+id/expiry_date"
+                                        android:layout_width="50dp"
+                                        android:layout_height="wrap_content"
+                                        android:background="@null"
+                                        android:ems="10"
+                                        android:gravity="center"
+                                        android:hint="MM"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:textColor="#000" />
+
+                                    <TextView
+                                        android:id="@+id/textView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="36dp"
+                                        android:text="/"
+                                        android:textAppearance="?android:attr/textAppearanceLarge"
+                                        android:textColor="#000000" />
+
+                                    <main.com.cineramamaps.customfont.RegularEditView
+                                        android:id="@+id/year"
+                                        android:layout_width="50dp"
+                                        android:layout_height="wrap_content"
+                                        android:background="@null"
+                                        android:ems="10"
+                                        android:gravity="center"
+                                        android:hint="YY"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:textColor="#000" />
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cvv"
+                                    android:textColor="@color/black" />
+
+                                <main.com.cineramamaps.customfont.RegularEditView
+                                    android:id="@+id/security_code"
+                                    android:layout_width="120dp"
+                                    android:layout_height="50dp"
+
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/edit_round_dra"
+                                    android:hint="123"
+                                    android:inputType="number"
+                                    android:maxLength="4"
+                                    android:paddingLeft="10dp"
+                                    android:textColor="#000" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/walletlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:visibility="gone">
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/swithcwallet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+
+                                android:layout_centerVertical="true"></androidx.appcompat.widget.SwitchCompat>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:id="@+id/normaltv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@+id/swithcwallet"
+                                android:text="Save card details"
+                                android:textColor="@color/black"></main.com.cineramamaps.customfont.RegularTextView>
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:id="@+id/walletamount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="5dp"
+                                android:layout_toEndOf="@+id/normaltv"
+                                android:text="(you have $29 )"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:visibility="gone"></main.com.cineramamaps.customfont.BoldTextView>
+                        </RelativeLayout>
+
+
+                        <Button
+                            android:id="@+id/createbtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="40dp"
+                            android:background="@drawable/button_round_dra"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:text="@string/create"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/stripe"></ImageView>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/poweredbystripe"
+                                android:textColor="@color/black"></main.com.cineramamaps.customfont.RegularTextView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressbar"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></ProgressBar>
+        <RelativeLayout
+            android:id="@+id/addbtn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone"
+            android:background="@drawable/addbtn"></RelativeLayout>
+    </RelativeLayout>
+</layout>

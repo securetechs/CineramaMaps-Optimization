@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layoutDirection="rtl"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        app:cardUseCompatPadding="true"
+        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <RelativeLayout
+            android:id="@+id/mainlay"
+            android:padding="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userimg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/userdemoimg"></de.hdodenhof.circleimageview.CircleImageView>
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/userimg"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/forward_img"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/username_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/date_time_tv"
+                        android:text="Jhon"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medium" />
+
+                    <TextView
+                        android:id="@+id/date_time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:text="12-07-2019 10:15"
+                        android:textColor="@color/darkgrey"
+                        android:textSize="@dimen/extrasmall" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/chatfor"
+                    android:layout_toLeftOf="@+id/date_time_tv"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/small"
+                    android:visibility="gone"
+                    android:text="Chat for: Swift VDI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/lastmessage"
+                    android:layout_marginTop="7dp"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/darkgrey"
+                    android:textSize="@dimen/small"
+                    android:text="You: Hello i am here"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/unreadcount"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/ic_circular_badge"
+                android:backgroundTint="@color/red"
+                android:gravity="center"
+                android:text="1"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textStyle="bold"></TextView>
+
+            <ImageView
+                android:id="@+id/forward_img"
+                android:layout_width="25dp"
+android:visibility="gone"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_back"
+                android:backgroundTint="@color/black"
+                android:rotation="-180" />
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

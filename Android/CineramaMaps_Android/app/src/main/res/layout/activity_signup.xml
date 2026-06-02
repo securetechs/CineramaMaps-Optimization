@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layoutDirection="ltr"
+    tools:context=".activity.SignupActivity">
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                 <RelativeLayout
+                     android:visibility="visible"
+                     android:id="@+id/mainlay"
+
+                     android:layout_width="match_parent"
+                     android:layout_height="50dp">
+
+                     <RelativeLayout
+                         android:id="@+id/backbut"
+                         android:layout_width="40dp"
+                         android:layout_height="40dp"
+                         android:layout_centerVertical="true"
+                         android:layout_marginLeft="0dp">
+
+                         <ImageView
+                             android:layout_width="25dp"
+                             android:layout_height="25dp"
+                             android:layout_centerInParent="true"
+                             android:background="@drawable/back"
+                             android:backgroundTint="@color/black" />
+
+                     </RelativeLayout>
+
+
+
+
+                 </RelativeLayout>
+            <LinearLayout
+                android:layout_below="@id/mainlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+
+
+
+
+                <View
+                    android:visibility="gone"
+                    android:layout_marginTop="7dp"
+                    android:background="@color/darkgrey"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="80dp"
+                    android:layout_height="0.5dp"></View>
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/image_lay"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/userimg"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/profile_ic"></de.hdodenhof.circleimageview.CircleImageView>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/edit"></ImageView>
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/msgtv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image_but"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="@string/signup"
+                    android:textColor="@color/slidetextcolor"
+                    android:textSize="25dp"
+                    android:textStyle="normal"
+                    android:visibility="visible" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_round_dra"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <ImageView
+                            android:id="@+id/usericon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/useri"
+                            android:visibility="visible" />
+
+                        <main.com.cineramamaps.customfont.RegularEditView
+                            android:id="@+id/first_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_centerInParent="true"
+                            android:layout_toEndOf="@+id/usericon"
+                            android:background="@null"
+                            android:hint="@string/firstname"
+                            android:inputType="text"
+                            android:padding="10dp" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_round_dra"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <ImageView
+                            android:id="@+id/lasticon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/useri"
+                            android:visibility="visible" />
+
+                        <main.com.cineramamaps.customfont.RegularEditView
+                            android:id="@+id/last_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_centerInParent="true"
+                            android:layout_toEndOf="@+id/lasticon"
+                            android:background="@null"
+                            android:hint="@string/lastname"
+                            android:inputType="text"
+                            android:padding="10dp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_round_dra"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <ImageView
+                            android:id="@+id/emailicon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/mail"
+                            android:visibility="visible" />
+
+                        <main.com.cineramamaps.customfont.RegularEditView
+                            android:id="@+id/email_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_centerInParent="true"
+                            android:layout_toEndOf="@+id/emailicon"
+                            android:background="@null"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:padding="10dp" />
+
+                    </RelativeLayout>
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_round_dra"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+                        <LinearLayout
+                            android:gravity="center_vertical"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <com.hbb20.CountryCodePicker
+                                        android:id="@+id/ccp"
+                                        app:ccp_defaultLanguage="ENGLISH"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        />
+                                    <!--   app:ccp_defaultNameCode="MV"
+                                                    app:ccp_customMasterCountries="MV"-->
+                                </LinearLayout>
+
+
+
+
+                            </LinearLayout>
+
+
+                            <main.com.cineramamaps.customfont.RegularEditView
+                                android:id="@+id/phone_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:background="@null"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:hint="@string/mobile"
+                                android:imeOptions="actionNext"
+                                android:singleLine="true"
+                                android:inputType="number"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_round_dra"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+
+                        <ImageView
+                            android:id="@+id/mapicon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/mapi"
+                            android:visibility="visible" />
+                        <LinearLayout
+                            android:layout_marginLeft="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:id="@+id/arealay"
+                                android:visibility="visible"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minHeight="55dp"
+                                android:layout_marginTop="0dp"
+                                >
+
+                                <Spinner
+                                    android:visibility="gone"
+                                    android:id="@+id/area_spn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                </Spinner>
+
+                                <TextView
+                                    android:id="@+id/area_name_tv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="55dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_toStartOf="@+id/dd"
+                                    android:background="@null"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/address"
+                                    android:padding="10dp"
+                                    android:textSize="16dp" />
+                                <ImageView
+                                    android:id="@+id/dd"
+                                    android:layout_marginRight="10sp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentRight="true"
+                                    app:tint="@color/greyunselect"
+                                    android:src="@drawable/ic_back"
+                                    android:layout_width="wrap_content"
+                                    android:rotation="180"
+                                    android:layout_height="25dp"></ImageView>
+                            </RelativeLayout>
+
+
+                            <Spinner
+                                android:visibility="gone"
+                                android:id="@+id/company_spinner1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"></Spinner>
+                            <View
+                                android:layout_marginTop="5dp"
+                                android:background="@color/lightgrey"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.8dp"></View>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_round_dra"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <ImageView
+                            android:id="@+id/passicon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/pass"
+                            android:visibility="visible" />
+
+                        <main.com.cineramamaps.customfont.RegularEditView
+                            android:id="@+id/password_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="15dp"
+                            android:layout_toStartOf="@+id/eyes"
+                            android:layout_toEndOf="@+id/passicon"
+                            android:background="@null"
+                            android:hint="@string/password"
+                            android:inputType="textPassword"
+                            android:padding="10dp" />
+                        <ImageView
+                            android:id="@+id/eyes"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/view_eye"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_round_dra"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <ImageView
+                            android:id="@+id/passicon1"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/pass"
+                            android:visibility="visible" />
+
+                        <main.com.cineramamaps.customfont.RegularEditView
+                            android:id="@+id/con_password_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_centerInParent="true"
+                            android:layout_toEndOf="@+id/passicon1"
+                            android:background="@null"
+                            android:layout_marginEnd="15dp"
+                            android:layout_toStartOf="@+id/eyes1"
+                            android:hint="@string/confirmpassword"
+                            android:inputType="textPassword"
+                            android:padding="10dp" />
+                        <ImageView
+                            android:id="@+id/eyes1"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/view_eye"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+
+
+                    <main.com.cineramamaps.customfont.RegularEditView
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/edit_round_dra"
+                        android:id="@+id/referal_et"
+                        android:padding="10dp"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:hint="@string/referalcode"
+                        android:inputType="text" />
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+                        <ImageView
+                            app:tint="@color/iconcolor"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_pin"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"></ImageView>
+                        <LinearLayout
+                            android:gravity="center_vertical"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+                                <RelativeLayout
+                                    android:gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <com.hbb20.CountryCodePicker
+                                        android:id="@+id/ccp1"
+                                        android:layout_width="400dp"
+                                        android:layout_height="35dp"
+
+                                        android:visibility="gone"
+
+
+                                        />
+                                    <!--   app:ccp_defaultNameCode="MV"
+                                                    app:ccp_customMasterCountries="MV"-->
+                                    <TextView
+                                        android:id="@+id/countrytxt"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"
+                                        android:text="Choose country"
+                                        android:visibility="gone"
+                                        android:layout_centerVertical="true"
+                                        android:layout_width="match_parent"
+                                        android:gravity="center_vertical"
+                                        android:layout_height="match_parent"></TextView>
+
+                                    <Spinner
+                                        android:visibility="visible"
+                                        android:id="@+id/company_spinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"></Spinner>
+
+                                    <View
+                                        android:layout_marginTop="5dp"
+                                        android:background="@color/lightgrey"
+                                        android:layout_width="match_parent"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_height="0.8dp"></View>
+
+                                </RelativeLayout>
+
+
+
+
+                            </LinearLayout>
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+
+                                android:layout_marginLeft="15dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <main.com.cineramamaps.customfont.RegularEditView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:hint="Post code"
+                                    android:imeOptions="actionNext"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    />
+
+
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:gravity="center_vertical"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+                        <ImageView
+                            app:tint="@color/iconcolor"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="25dp"
+                            android:visibility="visible"
+                            android:layout_height="25dp"></ImageView>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <main.com.cineramamaps.customfont.RegularEditView
+                                android:id="@+id/postalcode_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:hint="Post code"
+                                android:maxLength="30"
+                                android:singleLine="true"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                />
+
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/privacy_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            />
+
+                        <TextView
+                            android:id="@+id/provider_privacy_text"
+                            style="@style/TextAppearance.AppCompat.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+                <Button
+
+
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:id="@+id/signupbut"
+                    android:textColor="@color/white"
+                    android:text="@string/register"
+                    android:textSize="@dimen/medium"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button_round_dra"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp" />
+                <LinearLayout
+                    android:layout_margin="25dp"
+                    android:id="@+id/alreadyhaveaccount"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <main.com.cineramamaps.customfont.RegularTextView
+
+
+                        android:gravity="center"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/alreadyhaveaccount"
+                        android:textColor="@color/darkgrey" />
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <main.com.cineramamaps.customfont.BoldTextView
+
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:gravity="center"
+                            android:id="@+id/signupnow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="@string/signin"
+
+                            android:textColor="@color/toolbarcol" />
+                        <View
+                            android:layout_marginTop="1dp"
+                            android:background="@color/black"
+                            android:layout_width="45dp"
+                            android:layout_height="1dp"></View>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ProgressBar
+android:elevation="5dp"
+                android:visibility="gone"
+                android:id="@+id/progressbar"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ProgressBar>
+
+
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</layout>

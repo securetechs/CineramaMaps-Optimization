@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="ltr"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/toolbarcol"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/exit_app_but"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="0dp">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/back"
+                        android:backgroundTint="@color/white" />
+
+                </RelativeLayout>
+
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/exit_app_but"
+                    android:text="@string/addshedule"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium"
+                    android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/mainlay"
+
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:id="@+id/menulay"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/discountfoodsrecyler"
+                    android:layout_width="170dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                   android:background="@drawable/calenderimg"></ImageView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/edit_round_dra"
+    android:backgroundTint="#F7F7F7"
+    android:layout_margin="20dp">
+
+
+    <main.com.cineramamaps.customfont.RegularTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/date"
+        android:textColor="@color/black"></main.com.cineramamaps.customfont.RegularTextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/edit_round_dra"
+        android:orientation="vertical">
+
+        <main.com.cineramamaps.customfont.RegularTextView
+            android:id="@+id/datetxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@+id/mapimg"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="03/08/2024"
+            android:minHeight="55dp"
+            android:padding="0dp"
+            android:paddingStart="20dp"></main.com.cineramamaps.customfont.RegularTextView>
+
+        <ImageView
+            android:id="@+id/mapimg"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/calender"></ImageView>
+    </RelativeLayout>
+
+    <main.com.cineramamaps.customfont.RegularTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/time"
+        android:textColor="@color/black"></main.com.cineramamaps.customfont.RegularTextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/edit_round_dra"
+        android:orientation="vertical">
+
+        <main.com.cineramamaps.customfont.RegularTextView
+            android:id="@+id/timetxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@+id/mapimg1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="09:30"
+            android:minHeight="55dp"
+            android:padding="0dp"
+            android:paddingStart="20dp"></main.com.cineramamaps.customfont.RegularTextView>
+
+        <ImageView
+            android:id="@+id/mapimg1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/clock"></ImageView>
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="20dp"></RelativeLayout>
+</LinearLayout>
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:id="@+id/sendbut"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="30dp"
+
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="60dp"
+                    android:background="@drawable/button_round_dra"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@string/add"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:layout_below="@+id/mainlay"
+            android:visibility="gone"
+            android:id="@+id/shimmer_view_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            shimmer:duration="800">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include layout="@layout/shimmer_big_food_lay" />
+                <include layout="@layout/shimmer_big_food_lay" />
+                <include layout="@layout/shimmer_big_food_lay" />
+                <include layout="@layout/shimmer_big_food_lay" />
+                <include layout="@layout/shimmer_big_food_lay" />
+                <include layout="@layout/shimmer_big_food_lay" />
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</layout>

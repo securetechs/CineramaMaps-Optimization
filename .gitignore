@@ -1,0 +1,23 @@
+# Build outputs
+*.apk
+*.ipa
+*.dSYM.zip
+*.dSYM
+build/
+.gradle/
+*.iml
+local.properties
+.idea/
+*.xcuserdata/
+DerivedData/
+Pods/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Original zip downloads
+Source*/
+
+# Project credentials - NEVER commit
+PROJECT_DETAILS.md

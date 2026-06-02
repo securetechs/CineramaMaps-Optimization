@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layoutDirection="ltr"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <RelativeLayout
+        android:id="@+id/mainlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+
+        >
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:id="@+id/itemimg"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:visibility="gone"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:id="@+id/userpic"
+                            android:src="@drawable/notiimage"
+                            android:layout_height="80dp"></ImageView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toEndOf="@+id/itemimg"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                          >
+
+                            <ImageView
+                                android:id="@+id/mapi"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:tint="@color/green"
+                                android:src="@drawable/ic_pin_new"></ImageView>
+
+                            <TextView
+                                android:id="@+id/maptypetv"
+                               android:layout_toEndOf="@+id/mapi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="110dp"
+                                android:layout_marginStart="5dp"
+                                android:text="Turkey , Istanbul"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/medium" />
+                            <RelativeLayout
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end">
+                                <RelativeLayout
+                                    android:id="@+id/editbtn"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="end"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@drawable/button_round_dra"
+                                    android:backgroundTint="@color/orange"
+                                    android:gravity="center"
+                                    android:text="@string/edit"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/small" >
+                                    <ImageView
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_centerInParent="true"
+                                        android:backgroundTint="@color/white"
+                                        android:background="@drawable/editicon"></ImageView>
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:id="@+id/deletebtn"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="end"
+                                    android:layout_marginEnd="45dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@drawable/button_round_dra"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:gravity="center"
+                                    android:text="@string/edit"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/small" >
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_centerInParent="true"
+                                        android:backgroundTint="@color/white"
+                                        android:background="@drawable/delete"></ImageView>
+                                </RelativeLayout>
+                            </RelativeLayout>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/distancelay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:id="@+id/distancetv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toStartOf="@+id/timelay"
+                                android:gravity="start|center_vertical"
+                                android:text="120 KM away from you"
+                                android:textColor="@color/lightgrey"
+                                android:textStyle="normal" />
+                            <LinearLayout
+                                android:id="@+id/timelay"
+                                android:visibility="visible"
+                              android:orientation="horizontal"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/lightgrey"
+                                android:text="30 Minutes"
+                                android:gravity="center_vertical"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                            <TextView
+                                android:visibility="visible"
+                                android:id="@+id/timetv"
+                                android:layout_gravity="center_vertical"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/lightgrey"
+                                android:text="30 Minutes"
+                                android:gravity="center_vertical"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"></TextView>
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="5dp"
+                                    android:backgroundTint="#9E464C"
+                                    android:background="@drawable/caricon1"></ImageView>
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/titletv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toStartOf="@+id/unreadcount"
+                                android:gravity="center_vertical"
+                                android:text="Schedule Istanbul"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:visibility="gone"
+                                android:id="@+id/unreadcount"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="5dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:backgroundTint="@color/green"
+                                android:background="@drawable/ic_circular_badge"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"></TextView>
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/createdbytv"
+                            android:textSize="14dp"
+                            android:layout_marginStart="5dp"
+                            android:textColor="@color/grey"
+                            android:text="Created by Cineramamap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <RelativeLayout
+                            android:layout_marginTop="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:id="@+id/datetv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="10dp"
+                                android:text="Last update 12-08-2024"
+                                android:visibility="visible"
+                                android:textSize="@dimen/small" />
+
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="rtl"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:layout_margin="3dp"
+
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:scaleType="fitXY"
+                        android:id="@+id/foodimage"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:background="@color/lightgrey"></View>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/foodimage"
+                        android:gravity="start"
+                        android:orientation="vertical">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="3dp"
+                           android:background="@color/lightgrey" />
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/lightgrey" />
+
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="15dp"
+
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/lightgrey" />
+
+                        <View
+                            android:id="@+id/giverating"
+                            android:background="@drawable/button_round_dra"
+                            android:layout_width="90dp"
+                            android:backgroundTint="@color/lightgrey"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="@string/giverating"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/extrasmall" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/lightgrey" />
+                        <View
+                            android:layout_width="160dp"
+                            android:layout_height="10dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/lightgrey" />
+                        <View
+                            android:layout_width="160dp"
+                            android:layout_height="10dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/lightgrey" />
+                        <View
+                            android:layout_width="160dp"
+                            android:layout_height="10dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/lightgrey" />
+>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:orientation="vertical"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/extraitems"
+
+                            android:textSize="@dimen/small"
+                            />
+
+
+                        <TextView
+                            android:textColor="@color/black"
+                            android:layout_marginTop="2sp"
+                            android:layout_alignParentEnd="true"
+                            android:id="@+id/extra_item_tv"
+                            android:textSize="@dimen/small"
+
+                            android:text=""
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></TextView>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/lightgrey" />
+
+                        <RelativeLayout
+                            android:layout_marginTop="2sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <View
+                                android:layout_width="160dp"
+                                android:layout_height="10dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="3dp"
+                                android:background="@color/lightgrey" />
+
+                            <TextView
+                                android:visibility="gone"
+                                android:layout_alignParentEnd="true"
+                                android:id="@+id/track_orders"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="@string/trackorder"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/small"
+
+                                android:padding="5dp"
+
+                                android:textColor="@color/toolbarcol" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                    <View
+                        android:layout_marginTop="10dp"
+
+                        android:layout_below="@+id/tv_delivery_fee"
+                        android:background="@color/lightgrey"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"></View>
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:id="@+id/amountlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <View
+                                android:layout_width="120dp"
+                                android:layout_height="10dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="3dp"
+                                android:background="@color/lightgrey" />
+                            <View
+                                android:layout_alignParentEnd="true"
+                               android:background="@color/lightgrey"
+                                android:layout_width="100dp"
+                                android:layout_height="10dp"></View>
+
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <View
+                                android:layout_width="120dp"
+                                android:layout_height="10dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="3dp"
+                                android:background="@color/lightgrey" />
+                            <View
+                                android:layout_alignParentEnd="true"
+                               android:background="@color/lightgrey"
+                                android:layout_width="100dp"
+                                android:layout_height="10dp"></View>
+
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <View
+                                android:layout_width="120dp"
+                                android:layout_height="10dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="3dp"
+                                android:background="@color/lightgrey" />
+                            <View
+                                android:layout_alignParentEnd="true"
+                               android:background="@color/lightgrey"
+                                android:layout_width="100dp"
+                                android:layout_height="10dp"></View>
+
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <View
+                                android:layout_width="120dp"
+                                android:layout_height="10dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="3dp"
+                                android:background="@color/lightgrey" />
+                            <View
+                                android:layout_alignParentEnd="true"
+                               android:background="@color/lightgrey"
+                                android:layout_width="100dp"
+                                android:layout_height="10dp"></View>
+
+
+                        </RelativeLayout>
+                        <View
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/ddd"
+                            android:layout_below="@+id/tv_delivery_fee"
+                            android:background="@color/lightgrey"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"></View>
+
+                        <RelativeLayout
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <View
+                                android:layout_width="120dp"
+                                android:layout_height="10dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="3dp"
+                                android:background="@color/lightgrey" />
+                            <View
+                                android:layout_alignParentEnd="true"
+                                android:background="@color/lightgrey"
+                                android:layout_width="100dp"
+                                android:layout_height="10dp"></View>
+
+
+                        </RelativeLayout>
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="locale"
+    tools:context=".activity.WebViewActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/toolbarcol"
+                android:visibility="visible">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/exit_app_but"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    app:cardCornerRadius="40dp">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/back"
+                        android:backgroundTint="@color/colorPrimary" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/payment"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/large"
+                    android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+                <RelativeLayout
+                    android:id="@+id/rr_timerView"
+                    android:visibility="gone"
+                    android:layout_alignParentEnd="true"
+                     android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="55dp">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/circel_timer_shape"
+                        android:progressDrawable="@drawable/circel_timer" />
+
+                    <TextView
+                        android:id="@+id/timerTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                         android:text="30"
+                        android:textColor="@color/black"
+                        android:textSize="10dp" />
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <WebView
+            android:layout_below="@+id/mainlay"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/webview"
+            android:layout_marginTop="-6dp"
+            android:layout_width="fill_parent"
+            android:background="@color/white"
+            android:layout_height="fill_parent"
+            android:scrollbars="none"
+            />
+
+        <RelativeLayout
+            android:id="@+id/relProgress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_below="@+id/mainlay"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+        <ProgressBar
+             android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+             android:scaleType="centerCrop"
+            android:indeterminateTint="@color/colorPrimary"
+            />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

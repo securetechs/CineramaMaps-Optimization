@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="rtl"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="user"
+            type="main.com.cineramamaps.model.UserDetails" />
+    </data>
+
+    <RelativeLayout
+        android:fitsSystemWindows="true"
+        android:focusableInTouchMode="true"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/mainlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:background="@color/colorPrimary"
+                        android:visibility="visible">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/exit_app_but"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            app:cardCornerRadius="40dp">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:rotation="180"
+                                android:background="@drawable/back"
+                                android:backgroundTint="@color/colorPrimary" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <main.com.cineramamaps.customfont.BoldTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="0dp"
+                            android:gravity="center"
+                            android:text="@string/editprofile"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_below="@id/mainlay"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardUseCompatPadding="true"
+                        app:cardCornerRadius="25dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:id="@+id/imgselection"
+                                android:layout_marginTop="15dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp">
+
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/userimage"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:src="@drawable/profile_ic"></de.hdodenhof.circleimageview.CircleImageView>
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:src="@drawable/edit"></ImageView>
+
+
+                            </RelativeLayout>
+
+                            <main.com.cineramamaps.customfont.BoldTextView
+                                android:id="@+id/usernametv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/extralarge"></main.com.cineramamaps.customfont.BoldTextView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_marginStart="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/name"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/medium"></TextView>
+                                <main.com.cineramamaps.customfont.RegularEditView
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:id="@+id/first_name"
+                                    android:padding="10dp"
+                                    android:gravity="start|center_vertical"
+                                    android:text="@{user.firstName}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:hint="@string/firstname"
+                                    android:inputType="text"
+                                    android:background="@drawable/button_round_dra_white"/>
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/lastname"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/medium"></TextView>
+                                <main.com.cineramamaps.customfont.RegularEditView
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="15dp"
+                                    android:gravity="start|center_vertical"
+                                    android:layout_marginEnd="15dp"
+                                    android:id="@+id/last_name"
+                                    android:padding="10dp"
+                                    android:text="@{user.lastName}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:background="@drawable/button_round_dra_white"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:hint="@string/lastname"
+                                    android:inputType="text" />
+
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/mobilenumber"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/medium"></TextView>
+
+
+                                <LinearLayout
+                                    android:visibility="visible"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/button_round_dra_white"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+                                    <LinearLayout
+                                        android:gravity="center_vertical"
+                                        android:layout_width="match_parent"
+                                        android:orientation="horizontal"
+                                        android:layout_height="wrap_content">
+                                        <LinearLayout
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center_vertical"
+                                            android:orientation="horizontal">
+                                            <LinearLayout
+                                                android:gravity="center"
+                                                android:visibility="visible"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content">
+                                                <com.hbb20.CountryCodePicker
+                                                    android:id="@+id/ccp"
+                                                    app:ccp_showFlag="false"
+                                                    app:ccp_defaultLanguage="ARABIC"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    />
+                                                <!--   app:ccp_defaultNameCode="MV"
+                                                                app:ccp_customMasterCountries="MV"-->
+                                            </LinearLayout>
+
+
+
+
+                                        </LinearLayout>
+
+
+                                        <main.com.cineramamaps.customfont.RegularEditView
+                                            android:id="@+id/phone_et"
+                                            android:gravity="start|center_vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:padding="10dp"
+                                            android:text="@{user.mobile}"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_centerVertical="true"
+                                            android:hint="@string/mobile"
+
+                                            android:background="@null"
+                                            android:imeOptions="actionNext"
+                                            android:singleLine="true"
+                                            android:inputType="phone"
+                                            />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/emailaddress"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/medium"></TextView>
+                                <main.com.cineramamaps.customfont.RegularEditView
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:id="@+id/email_et"
+                                    android:gravity="start|center_vertical"
+                                    android:padding="10dp"
+                                    android:text="@{user.email}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:background="@drawable/button_round_dra_white"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:hint="@string/email"
+                                    android:enabled="false"
+                                    android:inputType="none"
+                                    />
+
+
+
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/gender"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/medium"></TextView>
+                                <Spinner
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:id="@+id/gender_spi"
+                                    android:padding="10dp"
+                                    android:gravity="start|center_vertical"
+                                    android:text="Male"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:background="@drawable/button_round_dra_white"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:hint="@string/gender"
+                                    android:inputType="none"
+                                    android:editable="false"
+                                    />
+
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/dateofbirth"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/medium"></TextView>
+                                <TextView
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:id="@+id/dob_et"
+                                    android:padding="10dp"
+                                    android:gravity="start|center_vertical"
+                                    android:hint="yyyy/mm/dd"
+                                    android:text="@{user.dob}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:background="@drawable/button_round_dra_white"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:inputType="none"
+                                    android:editable="false"
+                                    />
+
+
+
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="15dp"
+                                    android:gravity="center_vertical"
+                                    android:visibility="gone"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+                                    <ImageView
+                                        app:tint="@color/iconcolor"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/ic_pin"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"></ImageView>
+                                    <LinearLayout
+                                        android:layout_marginLeft="5dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <RelativeLayout
+                                            android:id="@+id/arealay"
+                                            android:visibility="visible"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:minHeight="40dp"
+                                            android:layout_marginTop="10dp"
+                                            >
+
+                                            <Spinner
+                                                android:visibility="gone"
+                                                android:id="@+id/area_spn"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent">
+
+                                            </Spinner>
+                                            <TextView
+                                                android:id="@+id/area_name_tv"
+                                                android:textSize="15dp"
+                                                android:textColor="@color/black"
+                                                android:text="@string/selectlocation"
+                                                android:layout_toLeftOf="@+id/dd"
+                                                android:layout_centerVertical="true"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"></TextView>
+                                            <ImageView
+                                                android:id="@+id/dd"
+                                                android:layout_marginRight="10sp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_alignParentRight="true"
+                                                app:tint="@color/darkgrey"
+                                                android:src="@drawable/ic_back"
+                                                android:layout_width="wrap_content"
+                                                android:rotation="180"
+                                                android:layout_height="wrap_content"></ImageView>
+                                        </RelativeLayout>
+
+
+                                        <Spinner
+                                            android:visibility="gone"
+                                            android:id="@+id/company_spinner1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"></Spinner>
+                                        <View
+                                            android:layout_marginTop="5dp"
+                                            android:background="@color/lightgrey"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0.8dp"></View>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:visibility="gone"
+                                    android:layout_marginTop="15dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+                                    <ImageView
+                                        app:tint="@color/iconcolor"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/ic_pin"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"></ImageView>
+                                    <LinearLayout
+                                        android:gravity="center_vertical"
+                                        android:layout_width="match_parent"
+                                        android:orientation="horizontal"
+                                        android:layout_height="wrap_content">
+                                        <LinearLayout
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center_vertical"
+                                            android:orientation="horizontal">
+                                            <RelativeLayout
+                                                android:gravity="center"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content">
+
+                                                <com.hbb20.CountryCodePicker
+                                                    android:id="@+id/ccp1"
+                                                    android:layout_width="400dp"
+                                                    android:layout_height="35dp"
+
+                                                    android:visibility="gone"
+
+
+                                                    />
+                                                <!--   app:ccp_defaultNameCode="MV"
+                                                                app:ccp_customMasterCountries="MV"-->
+                                                <TextView
+                                                    android:id="@+id/countrytxt"
+                                                    android:textSize="15dp"
+                                                    android:textColor="@color/black"
+                                                    android:text="Choose country"
+                                                    android:visibility="gone"
+                                                    android:layout_centerVertical="true"
+                                                    android:layout_width="match_parent"
+                                                    android:gravity="center_vertical"
+                                                    android:layout_height="match_parent"></TextView>
+
+                                                <Spinner
+                                                    android:visibility="visible"
+                                                    android:id="@+id/company_spinner"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"></Spinner>
+
+                                                <View
+                                                    android:layout_marginTop="5dp"
+                                                    android:background="@color/lightgrey"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_alignParentBottom="true"
+                                                    android:layout_height="0.8dp"></View>
+
+                                            </RelativeLayout>
+
+
+
+
+                                        </LinearLayout>
+
+
+                                        <com.google.android.material.textfield.TextInputLayout
+
+                                            android:layout_marginLeft="15dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <main.com.cineramamaps.customfont.RegularEditView
+
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_centerVertical="true"
+                                                android:hint="Post code"
+                                                android:imeOptions="actionNext"
+                                                android:singleLine="true"
+                                                android:inputType="number"
+                                                />
+
+
+
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="15dp"
+                                    android:gravity="center_vertical"
+                                    android:visibility="gone"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+                                    <ImageView
+                                        app:tint="@color/iconcolor"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_width="25dp"
+                                        android:visibility="visible"
+                                        android:layout_height="25dp"></ImageView>
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <main.com.cineramamaps.customfont.RegularEditView
+                                            android:id="@+id/postalcode_et"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_centerVertical="true"
+                                            android:hint="Post code"
+                                            android:maxLength="30"
+                                            android:singleLine="true"
+                                            android:imeOptions="actionNext"
+                                            android:inputType="number"
+                                            />
+
+
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+
+
+
+
+                            </LinearLayout>
+
+
+
+
+
+
+
+
+                            <TextView
+                                android:layout_marginTop="15dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:id="@+id/updatebut"
+                                android:textColor="@color/white"
+                                android:text="@string/save"
+                                android:gravity="center"
+                                android:textSize="18dp"
+                                android:layout_marginBottom="25dp"
+                                android:textStyle="bold"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/button_round_dra"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp" />
+
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+                <ProgressBar
+                    android:visibility="gone"
+                    android:id="@+id/progressbar"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></ProgressBar>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</layout>

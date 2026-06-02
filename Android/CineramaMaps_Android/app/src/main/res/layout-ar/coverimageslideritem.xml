@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="rtl"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+
+
+
+
+
+
+    >
+    <RelativeLayout
+        android:id="@+id/mainlay"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/banner1" />
+        <main.com.cineramamaps.customfont.BoldTextView
+            android:id="@+id/usernametv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginStart="15dp"
+            android:gravity="end"
+            android:visibility="gone"
+            android:text="20% discount on to flight to Istanbul."
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/white"
+            android:textSize="18dp"></main.com.cineramamaps.customfont.BoldTextView>
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:elevation="10dp"
+            android:visibility="gone" />
+
+    </RelativeLayout></RelativeLayout></layout>

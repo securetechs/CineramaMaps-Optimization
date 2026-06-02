@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+   >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/button_round_dra"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+
+<main.com.cineramamaps.customfont.BoldTextView
+    android:textStyle="bold"
+    android:layout_marginTop="40dp"
+    android:layout_width="match_parent"
+    android:textColor="@color/black"
+    android:gravity="center"
+    android:textSize="@dimen/large"
+    android:text="@string/congratulations"
+    android:layout_height="wrap_content"></main.com.cineramamaps.customfont.BoldTextView>
+<main.com.cineramamaps.customfont.RegularTextView
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:textColor="@color/black"
+    android:gravity="center"
+
+    android:textSize="@dimen/medium"
+    android:text="@string/youraccountcreatedsucc"
+    android:layout_height="wrap_content"></main.com.cineramamaps.customfont.RegularTextView>
+
+            <RelativeLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:id="@+id/backhome"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_round_dra"
+                    android:gravity="center"
+                    android:text="@string/continuetxt"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressbar"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

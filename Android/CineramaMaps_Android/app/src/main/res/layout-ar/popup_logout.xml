@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:backgroundTint="@color/white"
+
+            android:background="@drawable/button_round_dra"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <main.com.cineramamaps.customfont.BoldTextView
+                android:id="@+id/head1"
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:text="@string/deleteconfirmation"
+                android:layout_height="wrap_content"></main.com.cineramamaps.customfont.BoldTextView>
+            <main.com.cineramamaps.customfont.RegularTextView
+                android:id="@+id/head2"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="@dimen/medium"
+                android:text="@string/areyousurewanttodelete"
+                android:layout_height="wrap_content"></main.com.cineramamaps.customfont.RegularTextView>
+
+            <RelativeLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_alignParentBottom="true"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <main.com.cineramamaps.customfont.BoldTextView
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="20dp"
+                        android:id="@+id/gotocart"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+
+                        android:layout_gravity="bottom"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/medium"
+                        android:text="@string/yes"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:background="@drawable/button_round_dra"></main.com.cineramamaps.customfont.BoldTextView>
+                    <main.com.cineramamaps.customfont.BoldTextView
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:id="@+id/dismiss"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+
+                        android:layout_gravity="bottom"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:textSize="@dimen/medium"
+                        android:text="@string/no"
+                        android:background="@drawable/edit_round_dra"></main.com.cineramamaps.customfont.BoldTextView>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressbar"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

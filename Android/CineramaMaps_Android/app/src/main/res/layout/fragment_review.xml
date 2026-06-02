@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    tools:context=".activity.ReviewFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp">
+
+            <TextView
+                android:id="@+id/submitbut"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_round_dra"
+                android:backgroundTint="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/submityourreview"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+            <main.com.cineramamaps.customfont.BoldTextView
+                android:layout_below="@+id/submitbut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/reviews"
+                android:id="@+id/head"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+            <LinearLayout
+                android:id="@+id/seeallreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_below="@+id/head"
+                android:orientation="horizontal">
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+android:visibility="gone"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/serviceevaluation"
+                    android:textColor="@color/toolbarcol"
+                    android:textSize="@dimen/small"></main.com.cineramamaps.customfont.BoldTextView>
+                >
+
+                <ImageView
+                    android:visibility="gone"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/forward_ic"></ImageView>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <main.com.cineramamaps.constant.ExpandableHeightListView
+            android:id="@+id/reviewexplist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="50dp"
+            android:divider="@null"></main.com.cineramamaps.constant.ExpandableHeightListView>
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:layout_gravity="center"
+            android:visibility="gone"></ProgressBar>
+    </LinearLayout>
+
+</FrameLayout>

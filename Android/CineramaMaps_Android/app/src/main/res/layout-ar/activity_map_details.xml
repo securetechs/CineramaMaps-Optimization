@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="rtl"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:fitsSystemWindows="true"
+        android:focusableInTouchMode="true"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/toolbarcol"
+                android:visibility="visible">
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/exit_app_but"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    app:cardCornerRadius="40dp">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:rotation="180"
+                        android:background="@drawable/back"
+                        android:backgroundTint="@color/colorPrimary" />
+
+                </androidx.cardview.widget.CardView>
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:gravity="center"
+                    android:id="@+id/cityname1"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+
+                <LinearLayout
+                    android:id="@+id/llCurrency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/border_black"
+                    android:padding="5dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvCurrencyMap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="15dp"
+                        android:layout_gravity="center"
+                        android:text="SAR">
+
+                    </TextView>
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ccp_ic_arrow_drop_down"
+                        android:visibility="visible"/>
+
+
+
+
+
+                </LinearLayout>
+
+                
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/fav"
+                    android:id="@+id/cart"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/mycart" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/mainlay">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/cityimage"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="fitXY"
+                android:src="@color/lightgrey"></ImageView>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:visibility="visible"
+                    android:id="@+id/providerrecyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="380dp"
+                    android:layout_marginTop="0dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"></androidx.recyclerview.widget.RecyclerView>
+
+
+
+            <RelativeLayout
+                android:id="@+id/favic"
+                android:visibility="visible"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/favicimg"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/favunselected" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="400dp"
+                android:background="@drawable/round_corner_bg"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/menulay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:background="@drawable/grey_round_edge_back"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:weightSum="2">
+
+                        <main.com.cineramamaps.customfont.RegularTextView
+                            android:id="@+id/itemtv"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_round_dra"
+                            android:gravity="center"
+                            android:textColor="@color/white"></main.com.cineramamaps.customfont.RegularTextView>
+
+                        <main.com.cineramamaps.customfont.RegularTextView
+                            android:id="@+id/magicbagtv"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/items"
+                            android:textColor="@color/grey"></main.com.cineramamaps.customfont.RegularTextView>
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/lay1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnlay"
+                        android:layout_marginBottom="0dp"
+                        android:visibility="gone"
+                        app:cardCornerRadius="20dp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:id="@+id/searchlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:backgroundTint="@color/white"
+                            android:padding="3dp"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:id="@+id/dddddd"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/search" />
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:id="@+id/search_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="5dp"
+                                android:layout_toStartOf="@+id/search_bt"
+                                android:layout_toEndOf="@+id/dddddd"
+                                android:background="@null"
+                                android:gravity="center_vertical"
+                                android:hint="@string/searchdata"
+                                android:imeOptions="actionSearch"
+                                android:padding="5dp"
+                                android:textSize="@dimen/small" />
+
+                            <ImageView
+                                android:id="@+id/search_bt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:rotation="180"
+                                android:src="@drawable/ic_back"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/filterbutton"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="20dp"
+                                android:src="@drawable/filternew"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/layoutDots"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:id="@+id/nametv"
+                                    android:layout_toStartOf="@+id/pricetxt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_alignParentStart="true"
+                                    android:gravity="start"
+                                    android:layout_marginEnd="20dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/pricetxt"
+                                    android:visibility="visible"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="15dp"
+                                    android:text="39 riyals per month"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:id="@+id/ratelay"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center_vertical">
+
+                                    <RatingBar
+                                        android:id="@+id/ratingbar"
+                                        style="?android:attr/ratingBarStyleSmall"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:isIndicator="true"
+                                        android:numStars="5"
+                                        android:progressTint="@color/orange"
+                                        android:rating="0"></RatingBar>
+
+                                    <TextView
+                                        android:id="@+id/ratingtv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="5dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/medium"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_gravity="end"
+                                    android:gravity="end"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_toEndOf="@+id/ratelay"
+                                    android:layout_marginTop="10dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/addresstv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginEnd="5dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/small" />
+                                    <ImageView
+                                        android:visibility="visible"
+                                        android:layout_width="17dp"
+                                        android:layout_height="17dp"
+                                        android:src="@drawable/ic_pin_new"
+                                        android:tint="@color/colorPrimary"></ImageView>
+
+
+
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <com.google.android.material.tabs.TabLayout
+                                android:id="@+id/tabLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:textSize="16dp"
+                                app:tabMode="scrollable"
+                                app:tabSelectedTextColor="@color/green"
+                                app:tabTextColor="@color/grey_new" />
+
+                            <androidx.viewpager.widget.ViewPager
+                                android:id="@+id/viewPager"
+                                android:layout_width="match_parent"
+                                android:layout_height="600dp"
+                                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_view_favroite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mainlay"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                shimmer:duration="800">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/shimmer_big_food_lay" />
+
+                    <include layout="@layout/shimmer_big_food_lay" />
+
+                    <include layout="@layout/shimmer_big_food_lay" />
+
+                    <include layout="@layout/shimmer_big_food_lay" />
+
+                    <include layout="@layout/shimmer_big_food_lay" />
+
+                    <include layout="@layout/shimmer_big_food_lay" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+        <TextView
+            android:id="@+id/subscribebut"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_round_dra"
+            android:backgroundTint="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/subscribenow"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="choosecountryvisit">Choose your country to visit</string>
+    <string name="youhavenosubscriptionplan">You have no active subscription plan so please go to Subscription plan screen and purchase your plan to visit this country map.</string>
+    <string name="youhaveactive">You have already active plan for this country so you can visit on maps.</string>
+    <string name="countryname">Country name</string>
+    <string name="entername">Enter name</string>
+    <string name="placelist">Place List</string>
+    <string name="listview">ListView</string>
+    <string name="map">Map</string>
+    <string name="alltags">All Tags</string>
+    <string name="favoriteplaces">Favorite Places</string>
+    <string name="list">List</string>
+    <string name="seeall">See All</string>
+    <string name="alreadyhaveplan">You have already active plan for this city map.</string>
+    <string name="placedetails">Place Details</string>
+    <string name="placerating"><![CDATA[<u>Place Rating</u>]]></string>
+    <string name="allmaps">All Maps</string>
+    <string name="mymaps">My Maps</string>
+    <string name="nomapavailable">No map available</string>
+    <string name="videothisplace"><u>Video this place</u></string>
+    <string name="open">Open</string>
+    <string name="awayfromyou">Away from you</string>
+    <string name="thisplacedetailsisnotavailable">This place details is not available</string>
+    <string name="website">Website</string>
+    <string name="for1">for</string>
+    <string name="worthavisit">Worth a Visit</string>
+    <string name="notworthavisit">Not wroth visiting</string>
+    <string name="phonenumberisnotthere">Phone number is not available for calling.</string>
+    <string name="videolinknotavaiaible">Video link not available</string>
+    <string name="no_result_found">Result not found</string>
+    <string name="all">All</string>
+</resources>

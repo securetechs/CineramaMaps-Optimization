@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="ltr"
+        android:layout_gravity="start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:context=".Fragments.FragmentUserType">
+
+        <!-- Main Content -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mainlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@color/white">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/exit_app_but"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        app:cardBackgroundColor="@color/light_gray"
+                        app:cardCornerRadius="40dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_back"
+                            android:backgroundTint="@color/black" />
+                    </androidx.cardview.widget.CardView>
+
+                    <main.com.cineramamaps.customfont.BoldTextView
+                        android:id="@+id/headtxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="Resturant"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/searchicon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        app:cardBackgroundColor="@color/light_gray"
+                        app:cardCornerRadius="40dp">
+                        <ImageView
+                            android:id="@+id/search"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_search"
+                            android:backgroundTint="@color/black" />
+                    </androidx.cardview.widget.CardView>
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.compose.ui.platform.ComposeView
+                android:id="@+id/composeView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/btnlay"
+                android:visibility="gone"
+                android:layout_alignParentBottom="true"
+                 />
+            <RelativeLayout
+                android:id="@+id/datalay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mainlay">
+
+
+                <RelativeLayout
+                    android:id="@+id/maplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <fragment
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <!-- Transparent overlay to detect touches -->
+                        <View
+                            android:id="@+id/mapOverlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent" />
+                        <RelativeLayout
+                            android:id="@+id/btn_my_location"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom|end"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="30dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:background="@drawable/roundbtn1"
+                            android:src="@drawable/ic_location"
+                            android:contentDescription="My Location"
+                            android:elevation="8dp"
+                            >
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_location1"></ImageView>
+                        </RelativeLayout>
+
+                        <!-- Label at bottom -->
+                        <TextView
+                            android:id="@+id/longPressLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/label_bg"
+                            android:textColor="@android:color/white"
+                            android:gravity="center"
+                            android:layout_gravity="center|top"
+                            android:visibility="gone"
+                            android:padding="8dp"
+                            android:layout_marginTop="80dp"/>
+
+                    </FrameLayout>
+
+
+
+                    <!--                    <fragment-->
+<!--                        android:id="@+id/map"-->
+<!--                        android:name="com.google.android.gms.maps.SupportMapFragment"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent" />-->
+
+
+
+                    <LinearLayout
+                        android:id="@+id/taglay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:id="@+id/tagtxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+
+                            <RelativeLayout
+                                android:id="@+id/cancel1"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_cancel" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/providerrecyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/notificaitonlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="70dp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/btnlay"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@+id/mainlay">
+
+                <ImageView
+                    android:id="@+id/tagbtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/circular"
+                    android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_menu"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="270dp"
+                        android:layout_height="50dp"
+                        android:padding="16dp"
+                        app:strokeWidth="2dp"
+                        app:strokeColor="#E7E7E9"
+                        app:cardBackgroundColor="@android:color/white"
+                        android:background="@drawable/bg_outer_card"
+                        app:cardCornerRadius="50dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center">
+
+                            <RelativeLayout
+                                android:id="@+id/mapbtn"
+                                android:layout_width="120dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/roundbtn1">
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/ic_maps"/>
+
+                                <TextView
+                                    android:id="@+id/maptxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="@string/map"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="30dp"
+                                android:background="@android:color/darker_gray"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp" />
+
+                            <RelativeLayout
+                                android:id="@+id/listbtn"
+                                android:layout_width="120dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/roundbtn2">
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_centerVertical="true"
+                                    android:background="@color/black"
+                                    android:src="@drawable/ic_rowvertical"/>
+
+                                <TextView
+                                    android:id="@+id/listtxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="@string/list"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/emptylay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/mainlay"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="380dp"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginEnd="70dp"
+                    android:src="@drawable/empty_notification"
+                    android:visibility="gone" />
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="200dp"
+                    android:gravity="center"
+                    android:text="@string/no_result_found"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/extralarge" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/app_col_sec"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/addbtn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/addbtn"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/drawer_menu"
+            android:layout_marginTop="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/main"
+                    android:layout_width="230dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingTop="8dp"
+                        android:paddingStart="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:id="@+id/favIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_fav" />
+
+                            <TextView
+                                android:id="@+id/favLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/favoriteplaces"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/tagsLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/alltags"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentStart="true"
+                                android:text="@string/alltags"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_alignParentEnd="true"
+                                android:text="@string/viewall"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tags"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            tools:listitem="@layout/taglistitem" />
+                    </LinearLayout>
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:indeterminate="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <ImageView
+                    android:id="@+id/cancel"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                   android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/circular"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/ic_cancel"
+                    app:layout_constraintStart_toEndOf="@id/main"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="visible"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

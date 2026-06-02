@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/rv"
+             xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+    android:layout_marginEnd="60dp"
+    android:layout_marginStart="60dp"
+             android:orientation="vertical"
+             android:splitMotionEvents="false"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    >
+
+    <RelativeLayout
+        android:id="@+id/innerRl"
+        android:layout_centerInParent="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         android:layout_margin="5dp"
+        android:background="@drawable/dialog_background_color"
+        android:splitMotionEvents="false"
+         >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

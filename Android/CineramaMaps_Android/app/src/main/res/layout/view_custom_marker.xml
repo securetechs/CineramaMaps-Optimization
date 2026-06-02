@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layoutDirection="ltr"
+    android:layout_height="wrap_content">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="40dp"
+        android:id="@+id/markimage"
+        android:src="@drawable/pinone"
+        android:layout_height="40dp"></de.hdodenhof.circleimageview.CircleImageView>
+<ImageView
+    android:visibility="gone"
+    android:layout_marginTop="10dp"
+    app:tint="@color/green"
+    android:src="@drawable/ic_circular_badge"
+    android:layout_width="12dp"
+    android:layout_height="12dp"></ImageView>
+
+    <TextView
+        android:visibility="gone"
+        android:layout_marginTop="5dp"
+        android:id="@+id/markname"
+        android:textSize="@dimen/medium"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="John"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+</LinearLayout>

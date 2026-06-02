@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="rtl"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mainlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/toolbarcol"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/exit_app_but"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="0dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerInParent="true"
+                    android:rotation="180"
+                    android:background="@drawable/back"
+                    android:backgroundTint="@color/white" />
+
+            </RelativeLayout>
+
+
+            <main.com.cineramamaps.customfont.BoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/exit_app_but"
+                android:text="@string/filter"
+                android:textColor="@color/white"
+                android:textSize="@dimen/medium"
+                android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+
+        </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/mainlay"
+            android:background="@color/white"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical">
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/servicetype"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium"
+                    android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categorylistrecy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3"></androidx.recyclerview.widget.RecyclerView>
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/large"
+                    android:textStyle="bold"
+                    android:visibility="gone"></main.com.cineramamaps.customfont.BoldTextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/swichbtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></androidx.appcompat.widget.SwitchCompat>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="Vegan"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/small"></TextView>
+
+                </LinearLayout>
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/bylocation"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium"
+                    android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_round_dra"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:visibility="visible">
+
+
+                    <RelativeLayout
+                        android:id="@+id/arealay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:minHeight="40dp"
+                        android:visibility="visible">
+
+                        <Spinner
+                            android:id="@+id/area_spn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone">
+
+                        </Spinner>
+
+                        <TextView
+                            android:id="@+id/area_name_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:layout_toLeftOf="@+id/cancelimg"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medium"></TextView>
+
+                        <ImageView
+                            android:id="@+id/cancelimg"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentRight="true"
+
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10sp"
+                            android:background="@drawable/ic_back"
+                            android:backgroundTint="@color/black"
+                            android:rotation="180"></ImageView>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Open time"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium"
+                    android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+                <RadioGroup
+                    android:id="@+id/timegroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:checkedButton="@id/alltimerb"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/alltimerb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/alltime"></RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/selectimerb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/selecttime"></RadioButton>
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/timelay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <main.com.cineramamaps.customfont.RegularTextView
+                        android:id="@+id/starttimetxt"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/button_rectangle_dra"
+                        android:backgroundTint="@color/screenback2"
+                        android:gravity="center"
+                        android:hint="@string/fromtime"></main.com.cineramamaps.customfont.RegularTextView>
+
+                    <main.com.cineramamaps.customfont.RegularTextView
+                        android:id="@+id/endtimetxt"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="20dp"
+                        android:background="@drawable/button_rectangle_dra"
+                        android:backgroundTint="@color/screenback2"
+                        android:gravity="center"
+                        android:hint="@string/totime"></main.com.cineramamaps.customfont.RegularTextView>
+
+
+                </LinearLayout>
+
+                <main.com.cineramamaps.customfont.BoldTextView
+
+                    android:id="@+id/searchbut"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/button_round_dra"
+                    android:gravity="center"
+                    android:text="@string/search"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"></ProgressBar>
+    </RelativeLayout>
+
+</layout>

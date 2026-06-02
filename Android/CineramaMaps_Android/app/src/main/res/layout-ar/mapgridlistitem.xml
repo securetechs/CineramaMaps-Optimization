@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="rtl"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="170dp"
+        android:layout_height="130dp"
+        android:layout_margin="0dp"
+
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="170dp"
+                    android:layout_height="130dp">
+
+                    <!-- Background Image -->
+
+                    <ImageView
+                        android:id="@+id/restimage"
+                        android:layout_width="170dp"
+                        android:layout_height="130dp"
+                        android:scaleType="fitXY" />
+
+
+                    <!-- Main Image -->
+
+                    <ImageView
+                        android:id="@+id/mapimage"
+                        android:layout_width="170dp"
+                        android:layout_height="130dp"
+                        android:scaleType="fitXY"
+                        android:src="@color/lightgrey" />
+
+
+                    <!-- Shimmer Layout -->
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/shimmerLayout"
+                        android:layout_width="170dp"
+                        android:layout_height="130dp"
+                        app:auto_start="true"
+                        app:duration="1000"
+                       >
+
+                        <!-- Dummy View -->
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#DDDDDD" />
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+                    <!-- Country Image -->
+
+                    <ImageView
+                        android:id="@+id/countryimage"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitXY" />
+
+
+                    <!-- Username -->
+
+                    <main.com.cineramamaps.customfont.BoldTextView
+                        android:id="@+id/usernametv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="bottom|end"
+                        android:paddingBottom="5dp"
+                        android:text="The Republic of Turkey"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+
+                    <!-- Fav Icon -->
+
+                    <ImageView
+                        android:id="@+id/favic"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/fav"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/profileic"
+                    android:gravity="start"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <main.com.cineramamaps.customfont.BoldTextView
+                            android:id="@+id/restname_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="3dp"
+                            android:text="River Sand Hub"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medium"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+
+                            android:layout_width="60dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:background="@drawable/ratingbackground"
+                            android:gravity="center"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="10dp"
+                            android:paddingBottom="5dp"
+                            android:text="4.9"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/extrasmall"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="17dp"
+                                    android:layout_height="17dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/star1"></ImageView>
+
+                                <main.com.cineramamaps.customfont.RegularTextView
+                                    android:id="@+id/quantitylefttv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="5dp"
+                                    android:text="4.0"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/small"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp">
+
+                        <main.com.cineramamaps.customfont.RegularTextView
+                            android:id="@+id/time_tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="Trusted Brand: "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/extrasmall" />
+
+                        <main.com.cineramamaps.customfont.BoldTextView
+                            android:id="@+id/kmtv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_toEndOf="@+id/time_tv1"
+                            android:text="Golden river"
+                            android:textColor="@color/buttoncol"
+                            android:textSize="@dimen/small"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp">
+
+                        <main.com.cineramamaps.customfont.RegularTextView
+                            android:id="@+id/time_tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="3dp"
+                            android:text="Open: "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/extrasmall" />
+
+                        <main.com.cineramamaps.customfont.BoldTextView
+                            android:id="@+id/time_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_toEndOf="@+id/time_tv2"
+                            android:text="10:00 AM - 08:00 PM"
+                            android:textColor="@color/buttoncol"
+                            android:textSize="@dimen/small"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_pin2"></ImageView>
+
+                        <main.com.cineramamaps.customfont.RegularTextView
+                            android:id="@+id/location_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:text="1901 Thornride Cir,shallai hawaai"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/small" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</layout>

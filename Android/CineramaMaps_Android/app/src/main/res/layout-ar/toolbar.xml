@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layoutDirection="rtl"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+       android:background="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+
+
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/drawerbut"
+            app:cardCornerRadius="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_centerVertical="true"
+            android:layout_width="50dp"
+
+            android:layout_height="50dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:src="@drawable/drawer_icon"
+                android:visibility="visible" />
+        </androidx.cardview.widget.CardView>
+<androidx.cardview.widget.CardView
+    android:layout_width="50dp"
+    app:cardCornerRadius="25dp"
+    android:layout_marginEnd="15dp"
+    android:layout_alignParentEnd="true"
+    android:layout_centerVertical="true"
+    android:layout_height="50dp">
+    <RelativeLayout
+        android:layout_gravity="center"
+
+        android:id="@+id/notification_lay_tool"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/notification_bell"
+            android:visibility="visible"
+            app:tint="@color/black" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/notification_count"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="1"
+            android:background="@drawable/ic_circular_badge"
+            android:layout_alignParentEnd="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp"></TextView>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:id="@+id/addresslay"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_marginEnd="70dp"
+            android:layout_marginStart="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+
+                android:src="@drawable/ic_pin"
+                android:layout_width="25dp"
+                android:layout_height="25dp"></ImageView>
+            <main.com.cineramamaps.customfont.RegularTextView
+                android:id="@+id/addresstxt"
+                android:textColor="@color/black"
+                android:layout_marginStart="5dp"
+                android:text="@string/chooseaddress"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></main.com.cineramamaps.customfont.RegularTextView>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
+

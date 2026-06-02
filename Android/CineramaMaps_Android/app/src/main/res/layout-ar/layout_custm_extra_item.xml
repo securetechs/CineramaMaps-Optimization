@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layoutDirection="rtl"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <main.com.cineramamaps.customfont.RegularTextView
+            android:id="@+id/extraitemname1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Salad"
+            android:textColor="@color/black"></main.com.cineramamaps.customfont.RegularTextView>
+
+        <main.com.cineramamaps.customfont.BoldTextView
+            android:id="@+id/extpricetv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/extraitemname1"
+            android:text="$0.0"
+            android:textColor="@color/black"
+            android:textStyle="bold"></main.com.cineramamaps.customfont.BoldTextView>
+
+        <CheckBox
+            android:id="@+id/extcheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"></CheckBox>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+   >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/button_round_dra"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+
+            android:layout_width="match_parent"
+            android:layout_height="500dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="30dp"
+                android:layout_width="180dp"
+                app:cardCornerRadius="90dp"
+                app:cardBackgroundColor="@color/screenback2"
+                android:layout_height="180dp">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/topupsuccess_ic"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"></ImageView>
+
+            </androidx.cardview.widget.CardView>
+
+<main.com.cineramamaps.customfont.RegularTextView
+    android:layout_marginTop="40dp"
+    android:layout_width="match_parent"
+    android:textColor="@color/black"
+    android:gravity="center"
+    android:textSize="@dimen/large"
+    android:text="@string/yeep"
+    android:layout_height="wrap_content"></main.com.cineramamaps.customfont.RegularTextView>
+<main.com.cineramamaps.customfont.BoldTextView
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:textColor="@color/black"
+    android:gravity="center"
+    android:textStyle="bold"
+    android:textSize="@dimen/extralarge"
+    android:text="@string/topupsuccess"
+    android:layout_height="wrap_content"></main.com.cineramamaps.customfont.BoldTextView>
+
+            <RelativeLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:id="@+id/backhome"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/medium"
+                    android:text="@string/backtohome"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_round_dra"></main.com.cineramamaps.customfont.BoldTextView>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressbar"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="toolbarcol">#E25E14</color>
+    <color name="detailback">#D4E9F2</color>
+    <color name="greyunselect">#9C9C9C</color>
+    <color name="blue">#BAE9EF</color>
+    <color name="pink">#F8D1DE</color>
+    <color name="purple_200">#E25E14</color>
+    <color name="purple_500">#E25E14</color>
+    <color name="purple_700">#E25E14</color>
+    <color name="teal_200">#E25E14</color>
+    <color name="teal_700">#E25E14</color>
+    <color name="listbackcol">#E25E14</color>
+    <color name="app_col_sec">#E25E14</color>
+    <color name="lightgreytrans">#92F9CF4A</color>
+    <color name="blue1">#FF673AB7</color>
+    <color name="buttoncol">#E25E14</color>
+    <color name="darktextcol">#F2994A</color>
+    <color name="orange">#F2994A</color>
+    <color name="orangeI">#FD6543</color>
+    <color name="grey_unselect">#A3A3A3</color>
+    <color name="grey">#595959</color>
+    <color name="selectedicon">#313131</color>
+    <color name="grey_unselect_trans">#AB585858</color>
+    <color name="grey_unselect_trans2">#B9585858</color>
+    <color name="grey_back_col">#F9F9F9</color>
+    <color name="settingiconcol">#FFC26F</color>
+    <color name="yellow">#f9d109</color>
+    <color name="darkgrey">#000000</color>
+    <color name="darkgreybutton">#202020</color>
+    <color name="white">#ffffff</color>
+    <color name="tabback">#EDECEC</color>
+    <color name="facebookcol">#185091</color>
+    <color name="green">#e25e16</color>
+    <color name="iconcolor">#D1F6F3</color>
+    <color name="bottumiconcolor">#D1F6F3</color>
+    <color name="verylightgreen">#EFFAEB</color>
+    <color name="cartbackground">#F3F3F3</color>
+    <color name="appgreen">#D1F6F3</color>
+    <color name="red">#F15353</color>
+    <color name="black">#000000</color>
+    <color name="lightblack">#191919</color>
+    <color name="lightgrey">#d9d8d8</color>
+    <color name="verylightgrey">#EEEEEE</color>
+    <color name="transparent">#00FFFCFC</color>
+    <color name="trans">#00000000</color>
+    <color name="screenback">#EEEEEE</color>
+    <color name="googlebutcol">#F5EFFC</color>
+    <color name="screenback2">#F8F8F8</color>
+    <color name="editbackcol">#F5F4F4</color>
+    <color name="darktextcolor">#1B210D</color>
+    <color name="slidetextcolor">#E25E14</color>
+    <color name="colorPrimary">#E25E14</color>
+    <color name="colorPrimaryDark">#E25E14</color>
+    <color name="colorAccent">#E25E14</color>
+    <color name="grey_new">#8E8E93</color>
+    <color name="dialog_border_color">#AA7E7D78</color>
+    <color name="icon_tint">#818391</color>
+
+
+</resources>

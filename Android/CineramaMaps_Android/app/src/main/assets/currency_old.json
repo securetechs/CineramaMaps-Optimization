@@ -1,0 +1,962 @@
+[
+  {
+    "countryCode": "AE",
+    "currencyCode": "AED",
+    "currencySymbol": "د.إ",
+    "flagUrl": "https://flagcdn.com/w320/ae.png"
+  },
+  {
+    "countryCode": "AF",
+    "currencyCode": "AFN",
+    "currencySymbol": "Af",
+    "flagUrl": "https://flagcdn.com/w320/af.png"
+  },
+  {
+    "countryCode": "AL",
+    "currencyCode": "ALL",
+    "currencySymbol": "L",
+    "flagUrl": "https://flagcdn.com/w320/al.png"
+  },
+  {
+    "countryCode": "AM",
+    "currencyCode": "AMD",
+    "currencySymbol": "դր",
+    "flagUrl": "https://flagcdn.com/w320/am.png"
+  },
+  {
+    "countryCode": "AN",
+    "currencyCode": "ANG",
+    "currencySymbol": "ƒ",
+    "flagUrl": "https://flagcdn.com/w320/aw.png"
+  },
+  {
+    "countryCode": "AO",
+    "currencyCode": "AOA",
+    "currencySymbol": "Kz",
+    "flagUrl": "https://flagcdn.com/w320/ao.png"
+  },
+  {
+    "countryCode": "AR",
+    "currencyCode": "ARS",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/ar.png"
+  },
+  {
+    "countryCode": "AU",
+    "currencyCode": "AUD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/au.png"
+  },
+  {
+    "countryCode": "AW",
+    "currencyCode": "AWG",
+    "currencySymbol": "Afl.",
+    "flagUrl": "https://flagcdn.com/w320/aw.png"
+  },
+  {
+    "countryCode": "AZ",
+    "currencyCode": "AZN",
+    "currencySymbol": "₼",
+    "flagUrl": "https://flagcdn.com/w320/az.png"
+  },
+  {
+    "countryCode": "BA",
+    "currencyCode": "BAM",
+    "currencySymbol": "KM",
+    "flagUrl": "https://flagcdn.com/w320/ba.png"
+  },
+  {
+    "countryCode": "BB",
+    "currencyCode": "BBD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/bb.png"
+  },
+  {
+    "countryCode": "BD",
+    "currencyCode": "BDT",
+    "currencySymbol": "৳",
+    "flagUrl": "https://flagcdn.com/w320/bd.png"
+  },
+  {
+    "countryCode": "BG",
+    "currencyCode": "BGN",
+    "currencySymbol": "лв",
+    "flagUrl": "https://flagcdn.com/w320/bg.png"
+  },
+  {
+    "countryCode": "BH",
+    "currencyCode": "BHD",
+    "currencySymbol": ".د.ب",
+    "flagUrl": "https://flagcdn.com/w320/bh.png"
+  },
+  {
+    "countryCode": "BI",
+    "currencyCode": "BIF",
+    "currencySymbol": "FBu",
+    "flagUrl": "https://flagcdn.com/w320/bi.png"
+  },
+  {
+    "countryCode": "BM",
+    "currencyCode": "BMD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/bm.png"
+  },
+  {
+    "countryCode": "BN",
+    "currencyCode": "BND",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/bn.png"
+  },
+  {
+    "countryCode": "BO",
+    "currencyCode": "BOB",
+    "currencySymbol": "$b",
+    "flagUrl": "https://flagcdn.com/w320/bo.png"
+  },
+  {
+    "countryCode": "BR",
+    "currencyCode": "BRL",
+    "currencySymbol": "R$",
+    "flagUrl": "https://flagcdn.com/w320/br.png"
+  },
+  {
+    "countryCode": "BS",
+    "currencyCode": "BSD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/bs.png"
+  },
+  {
+    "countryCode": "BT",
+    "currencyCode": "BTN",
+    "currencySymbol": "Nu.",
+    "flagUrl": "https://flagcdn.com/w320/bt.png"
+  },
+  {
+    "countryCode": "BW",
+    "currencyCode": "BWP",
+    "currencySymbol": "P",
+    "flagUrl": "https://flagcdn.com/w320/bw.png"
+  },
+  {
+    "countryCode": "BY",
+    "currencyCode": "BYN",
+    "currencySymbol": "Br",
+    "flagUrl": "https://flagcdn.com/w320/by.png"
+  },
+  {
+    "countryCode": "BZ",
+    "currencyCode": "BZD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/bz.png"
+  },
+  {
+    "countryCode": "CA",
+    "currencyCode": "CAD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/ca.png"
+  },
+  {
+    "countryCode": "CD",
+    "currencyCode": "CDF",
+    "currencySymbol": "FC",
+    "flagUrl": "https://flagcdn.com/w320/cd.png"
+  },
+  {
+    "countryCode": "CH",
+    "currencyCode": "CHF",
+    "currencySymbol": "Fr.",
+    "flagUrl": "https://flagcdn.com/w320/ch.png"
+  },
+  {
+    "countryCode": "CL",
+    "currencyCode": "CLP",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/cl.png"
+  },
+  {
+    "countryCode": "CN",
+    "currencyCode": "CNY",
+    "currencySymbol": "¥",
+    "flagUrl": "https://flagcdn.com/w320/cn.png"
+  },
+  {
+    "countryCode": "CO",
+    "currencyCode": "COP",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/co.png"
+  },
+  {
+    "countryCode": "CR",
+    "currencyCode": "CRC",
+    "currencySymbol": "₡",
+    "flagUrl": "https://flagcdn.com/w320/cr.png"
+  },
+  {
+    "countryCode": "CU",
+    "currencyCode": "CUC",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/cu.png"
+  },
+  {
+    "countryCode": "CU",
+    "currencyCode": "CUP",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/cu.png"
+  },
+  {
+    "countryCode": "CV",
+    "currencyCode": "CVE",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/cv.png"
+  },
+  {
+    "countryCode": "CZ",
+    "currencyCode": "CZK",
+    "currencySymbol": "Kč",
+    "flagUrl": "https://flagcdn.com/w320/cz.png"
+  },
+  {
+    "countryCode": "DJ",
+    "currencyCode": "DJF",
+    "currencySymbol": "Fdj",
+    "flagUrl": "https://flagcdn.com/w320/dj.png"
+  },
+  {
+    "countryCode": "DK",
+    "currencyCode": "DKK",
+    "currencySymbol": "kr",
+    "flagUrl": "https://flagcdn.com/w320/dk.png"
+  },
+  {
+    "countryCode": "DO",
+    "currencyCode": "DOP",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/do.png"
+  },
+  {
+    "countryCode": "DZ",
+    "currencyCode": "DZD",
+    "currencySymbol": "دج",
+    "flagUrl": "https://flagcdn.com/w320/dz.png"
+  },
+  {
+    "countryCode": "EG",
+    "currencyCode": "EGP",
+    "currencySymbol": "ج.م",
+    "flagUrl": "https://flagcdn.com/w320/eg.png"
+  },
+  {
+    "countryCode": "ER",
+    "currencyCode": "ERN",
+    "currencySymbol": "Nfk",
+    "flagUrl": "https://flagcdn.com/w320/er.png"
+  },
+  {
+    "countryCode": "ET",
+    "currencyCode": "ETB",
+    "currencySymbol": "Br",
+    "flagUrl": "https://flagcdn.com/w320/et.png"
+  },
+  {
+    "countryCode": "EU",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "flagUrl": "https://flagcdn.com/w320/eu.png"
+  },
+  {
+    "countryCode": "FJ",
+    "currencyCode": "FJD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/fj.png"
+  },
+  {
+    "countryCode": "FK",
+    "currencyCode": "FKP",
+    "currencySymbol": "£",
+    "flagUrl": "https://flagcdn.com/w320/fk.png"
+  },
+  {
+    "countryCode": "GB",
+    "currencyCode": "GBP",
+    "currencySymbol": "£",
+    "flagUrl": "https://flagcdn.com/w320/gb.png"
+  },
+  {
+    "countryCode": "GE",
+    "currencyCode": "GEL",
+    "currencySymbol": "₾",
+    "flagUrl": "https://flagcdn.com/w320/ge.png"
+  },
+  {
+    "countryCode": "GG",
+    "currencyCode": "GGP",
+    "currencySymbol": "£",
+    "flagUrl": "https://flagcdn.com/w320/gg.png"
+  },
+  {
+    "countryCode": "GH",
+    "currencyCode": "GHS",
+    "currencySymbol": "₵",
+    "flagUrl": "https://flagcdn.com/w320/gh.png"
+  },
+  {
+    "countryCode": "GI",
+    "currencyCode": "GIP",
+    "currencySymbol": "£",
+    "flagUrl": "https://flagcdn.com/w320/gi.png"
+  },
+  {
+    "countryCode": "GM",
+    "currencyCode": "GMD",
+    "currencySymbol": "D",
+    "flagUrl": "https://flagcdn.com/w320/gm.png"
+  },
+  {
+    "countryCode": "GN",
+    "currencyCode": "GNF",
+    "currencySymbol": "Fr",
+    "flagUrl": "https://flagcdn.com/w320/gn.png"
+  },
+  {
+    "countryCode": "GT",
+    "currencyCode": "GTQ",
+    "currencySymbol": "Q",
+    "flagUrl": "https://flagcdn.com/w320/gt.png"
+  },
+  {
+    "countryCode": "GY",
+    "currencyCode": "GYD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/gy.png"
+  },
+  {
+    "countryCode": "HK",
+    "currencyCode": "HKD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/hk.png"
+  },
+  {
+    "countryCode": "HN",
+    "currencyCode": "HNL",
+    "currencySymbol": "L",
+    "flagUrl": "https://flagcdn.com/w320/hn.png"
+  },
+  {
+    "countryCode": "HR",
+    "currencyCode": "HRK",
+    "currencySymbol": "kn",
+    "flagUrl": "https://flagcdn.com/w320/hr.png"
+  },
+  {
+    "countryCode": "HT",
+    "currencyCode": "HTG",
+    "currencySymbol": "G",
+    "flagUrl": "https://flagcdn.com/w320/ht.png"
+  },
+  {
+    "countryCode": "HU",
+    "currencyCode": "HUF",
+    "currencySymbol": "Ft",
+    "flagUrl": "https://flagcdn.com/w320/hu.png"
+  },
+  {
+    "countryCode": "ID",
+    "currencyCode": "IDR",
+    "currencySymbol": "Rp",
+    "flagUrl": "https://flagcdn.com/w320/id.png"
+  },
+  {
+    "countryCode": "IL",
+    "currencyCode": "ILS",
+    "currencySymbol": "₪",
+    "flagUrl": "https://flagcdn.com/w320/il.png"
+  },
+  {
+    "countryCode": "IM",
+    "currencyCode": "IMP",
+    "currencySymbol": "£",
+    "flagUrl": "https://flagcdn.com/w320/im.png"
+  },
+  {
+    "countryCode": "IN",
+    "currencyCode": "INR",
+    "currencySymbol": "₹",
+    "flagUrl": "https://flagcdn.com/w320/in.png"
+  },
+  {
+    "countryCode": "IQ",
+    "currencyCode": "IQD",
+    "currencySymbol": "ع.د",
+    "flagUrl": "https://flagcdn.com/w320/iq.png"
+  },
+  {
+    "countryCode": "IR",
+    "currencyCode": "IRR",
+    "currencySymbol": "﷼",
+    "flagUrl": "https://flagcdn.com/w320/ir.png"
+  },
+  {
+    "countryCode": "IS",
+    "currencyCode": "ISK",
+    "currencySymbol": "kr",
+    "flagUrl": "https://flagcdn.com/w320/is.png"
+  },
+  {
+    "countryCode": "JE",
+    "currencyCode": "JEP",
+    "currencySymbol": "£",
+    "flagUrl": "https://flagcdn.com/w320/je.png"
+  },
+  {
+    "countryCode": "JM",
+    "currencyCode": "JMD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/jm.png"
+  },
+  {
+    "countryCode": "JO",
+    "currencyCode": "JOD",
+    "currencySymbol": "د.ا",
+    "flagUrl": "https://flagcdn.com/w320/jo.png"
+  },
+  {
+    "countryCode": "JP",
+    "currencyCode": "JPY",
+    "currencySymbol": "¥",
+    "flagUrl": "https://flagcdn.com/w320/jp.png"
+  },
+  {
+    "countryCode": "KE",
+    "currencyCode": "KES",
+    "currencySymbol": "Sh",
+    "flagUrl": "https://flagcdn.com/w320/ke.png"
+  },
+  {
+    "countryCode": "KG",
+    "currencyCode": "KGS",
+    "currencySymbol": "с",
+    "flagUrl": "https://flagcdn.com/w320/kg.png"
+  },
+  {
+    "countryCode": "KH",
+    "currencyCode": "KHR",
+    "currencySymbol": "៛",
+    "flagUrl": "https://flagcdn.com/w320/kh.png"
+  },
+  {
+    "countryCode": "KM",
+    "currencyCode": "KMF",
+    "currencySymbol": "Fr",
+    "flagUrl": "https://flagcdn.com/w320/km.png"
+  },
+  {
+    "countryCode": "KP",
+    "currencyCode": "KPW",
+    "currencySymbol": "₩",
+    "flagUrl": "https://flagcdn.com/w320/kp.png"
+  },
+  {
+    "countryCode": "KR",
+    "currencyCode": "KRW",
+    "currencySymbol": "₩",
+    "flagUrl": "https://flagcdn.com/w320/kr.png"
+  },
+  {
+    "countryCode": "KW",
+    "currencyCode": "KWD",
+    "currencySymbol": "د.ك",
+    "flagUrl": "https://flagcdn.com/w320/kw.png"
+  },
+  {
+    "countryCode": "KY",
+    "currencyCode": "KYD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/ky.png"
+  },
+  {
+    "countryCode": "KZ",
+    "currencyCode": "KZT",
+    "currencySymbol": "₸",
+    "flagUrl": "https://flagcdn.com/w320/kz.png"
+  },
+  {
+    "countryCode": "LA",
+    "currencyCode": "LAK",
+    "currencySymbol": "₭",
+    "flagUrl": "https://flagcdn.com/w320/la.png"
+  },
+  {
+    "countryCode": "LB",
+    "currencyCode": "LBP",
+    "currencySymbol": "ل.ل",
+    "flagUrl": "https://flagcdn.com/w320/lb.png"
+  },
+  {
+    "countryCode": "LK",
+    "currencyCode": "LKR",
+    "currencySymbol": "Rs",
+    "flagUrl": "https://flagcdn.com/w320/lk.png"
+  },
+  {
+    "countryCode": "LR",
+    "currencyCode": "LRD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/lr.png"
+  },
+  {
+    "countryCode": "LS",
+    "currencyCode": "LSL",
+    "currencySymbol": "L",
+    "flagUrl": "https://flagcdn.com/w320/ls.png"
+  },
+  {
+    "countryCode": "LT",
+    "currencyCode": "LTL",
+    "currencySymbol": "Lt",
+    "flagUrl": "https://flagcdn.com/w320/lt.png"
+  },
+  {
+    "countryCode": "LV",
+    "currencyCode": "LVL",
+    "currencySymbol": "Ls",
+    "flagUrl": "https://flagcdn.com/w320/lv.png"
+  },
+  {
+    "countryCode": "LY",
+    "currencyCode": "LYD",
+    "currencySymbol": "د.ل",
+    "flagUrl": "https://flagcdn.com/w320/ly.png"
+  },
+  {
+    "countryCode": "MA",
+    "currencyCode": "MAD",
+    "currencySymbol": "د.م.",
+    "flagUrl": "https://flagcdn.com/w320/ma.png"
+  },
+  {
+    "countryCode": "MD",
+    "currencyCode": "MDL",
+    "currencySymbol": "L",
+    "flagUrl": "https://flagcdn.com/w320/md.png"
+  },
+  {
+    "countryCode": "MG",
+    "currencyCode": "MGA",
+    "currencySymbol": "Ar",
+    "flagUrl": "https://flagcdn.com/w320/mg.png"
+  },
+  {
+    "countryCode": "MK",
+    "currencyCode": "MKD",
+    "currencySymbol": "ден",
+    "flagUrl": "https://flagcdn.com/w320/mk.png"
+  },
+  {
+    "countryCode": "MM",
+    "currencyCode": "MMK",
+    "currencySymbol": "Ks",
+    "flagUrl": "https://flagcdn.com/w320/mm.png"
+  },
+  {
+    "countryCode": "MN",
+    "currencyCode": "MNT",
+    "currencySymbol": "₮",
+    "flagUrl": "https://flagcdn.com/w320/mn.png"
+  },
+  {
+    "countryCode": "MO",
+    "currencyCode": "MOP",
+    "currencySymbol": "P",
+    "flagUrl": "https://flagcdn.com/w320/mo.png"
+  },
+  {
+    "countryCode": "MR",
+    "currencyCode": "MRO",
+    "currencySymbol": "UM",
+    "flagUrl": "https://flagcdn.com/w320/mr.png"
+  },
+  {
+    "countryCode": "MU",
+    "currencyCode": "MUR",
+    "currencySymbol": "₨",
+    "flagUrl": "https://flagcdn.com/w320/mu.png"
+  },
+  {
+    "countryCode": "MV",
+    "currencyCode": "MVR",
+    "currencySymbol": "Rf",
+    "flagUrl": "https://flagcdn.com/w320/mv.png"
+  },
+  {
+    "countryCode": "MW",
+    "currencyCode": "MWK",
+    "currencySymbol": "K",
+    "flagUrl": "https://flagcdn.com/w320/mw.png"
+  },
+  {
+    "countryCode": "MX",
+    "currencyCode": "MXN",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/mx.png"
+  },
+  {
+    "countryCode": "MY",
+    "currencyCode": "MYR",
+    "currencySymbol": "RM",
+    "flagUrl": "https://flagcdn.com/w320/my.png"
+  },
+  {
+    "countryCode": "MZ",
+    "currencyCode": "MZN",
+    "currencySymbol": "MT",
+    "flagUrl": "https://flagcdn.com/w320/mz.png"
+  },
+  {
+    "countryCode": "NA",
+    "currencyCode": "NAD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/na.png"
+  },
+  {
+    "countryCode": "NG",
+    "currencyCode": "NGN",
+    "currencySymbol": "₦",
+    "flagUrl": "https://flagcdn.com/w320/ng.png"
+  },
+  {
+    "countryCode": "NI",
+    "currencyCode": "NIO",
+    "currencySymbol": "C$",
+    "flagUrl": "https://flagcdn.com/w320/ni.png"
+  },
+  {
+    "countryCode": "NO",
+    "currencyCode": "NOK",
+    "currencySymbol": "kr",
+    "flagUrl": "https://flagcdn.com/w320/no.png"
+  },
+  {
+    "countryCode": "NP",
+    "currencyCode": "NPR",
+    "currencySymbol": "Rs",
+    "flagUrl": "https://flagcdn.com/w320/np.png"
+  },
+  {
+    "countryCode": "NZ",
+    "currencyCode": "NZD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/nz.png"
+  },
+  {
+    "countryCode": "OM",
+    "currencyCode": "OMR",
+    "currencySymbol": "ر.ع.",
+    "flagUrl": "https://flagcdn.com/w320/om.png"
+  },
+  {
+    "countryCode": "PA",
+    "currencyCode": "PAB",
+    "currencySymbol": "B/.",
+    "flagUrl": "https://flagcdn.com/w320/pa.png"
+  },
+  {
+    "countryCode": "PE",
+    "currencyCode": "PEN",
+    "currencySymbol": "S/.",
+    "flagUrl": "https://flagcdn.com/w320/pe.png"
+  },
+  {
+    "countryCode": "PG",
+    "currencyCode": "PGK",
+    "currencySymbol": "K",
+    "flagUrl": "https://flagcdn.com/w320/pg.png"
+  },
+  {
+    "countryCode": "PH",
+    "currencyCode": "PHP",
+    "currencySymbol": "₱",
+    "flagUrl": "https://flagcdn.com/w320/ph.png"
+  },
+  {
+    "countryCode": "PK",
+    "currencyCode": "PKR",
+    "currencySymbol": "₨",
+    "flagUrl": "https://flagcdn.com/w320/pk.png"
+  },
+  {
+    "countryCode": "PL",
+    "currencyCode": "PLN",
+    "currencySymbol": "zł",
+    "flagUrl": "https://flagcdn.com/w320/pl.png"
+  },
+  {
+    "countryCode": "PY",
+    "currencyCode": "PYG",
+    "currencySymbol": "₲",
+    "flagUrl": "https://flagcdn.com/w320/py.png"
+  },
+  {
+    "countryCode": "QA",
+    "currencyCode": "QAR",
+    "currencySymbol": "ر.ق",
+    "flagUrl": "https://flagcdn.com/w320/qa.png"
+  },
+  {
+    "countryCode": "RO",
+    "currencyCode": "RON",
+    "currencySymbol": "lei",
+    "flagUrl": "https://flagcdn.com/w320/ro.png"
+  },
+  {
+    "countryCode": "RS",
+    "currencyCode": "RSD",
+    "currencySymbol": "din",
+    "flagUrl": "https://flagcdn.com/w320/rs.png"
+  },
+  {
+    "countryCode": "RU",
+    "currencyCode": "RUB",
+    "currencySymbol": "₽",
+    "flagUrl": "https://flagcdn.com/w320/ru.png"
+  },
+  {
+    "countryCode": "RW",
+    "currencyCode": "RWF",
+    "currencySymbol": "Fr",
+    "flagUrl": "https://flagcdn.com/w320/rw.png"
+  },
+  {
+    "countryCode": "SA",
+    "currencyCode": "SAR",
+    "currencySymbol": "ر.س",
+    "flagUrl": "https://flagcdn.com/w320/sa.png"
+  },
+  {
+    "countryCode": "SB",
+    "currencyCode": "SBD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/sb.png"
+  },
+  {
+    "countryCode": "SC",
+    "currencyCode": "SCR",
+    "currencySymbol": "₨",
+    "flagUrl": "https://flagcdn.com/w320/sc.png"
+  },
+  {
+    "countryCode": "SD",
+    "currencyCode": "SDG",
+    "currencySymbol": "£",
+    "flagUrl": "https://flagcdn.com/w320/sd.png"
+  },
+  {
+    "countryCode": "SE",
+    "currencyCode": "SEK",
+    "currencySymbol": "kr",
+    "flagUrl": "https://flagcdn.com/w320/se.png"
+  },
+  {
+    "countryCode": "SG",
+    "currencyCode": "SGD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/sg.png"
+  },
+  {
+    "countryCode": "SH",
+    "currencyCode": "SHP",
+    "currencySymbol": "£",
+    "flagUrl": "https://flagcdn.com/w320/sh.png"
+  },
+  {
+    "countryCode": "SL",
+    "currencyCode": "SLL",
+    "currencySymbol": "Le",
+    "flagUrl": "https://flagcdn.com/w320/sl.png"
+  },
+  {
+    "countryCode": "SO",
+    "currencyCode": "SOS",
+    "currencySymbol": "Sh",
+    "flagUrl": "https://flagcdn.com/w320/so.png"
+  },
+  {
+    "countryCode": "SR",
+    "currencyCode": "SRD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/sr.png"
+  },
+  {
+    "countryCode": "ST",
+    "currencyCode": "STD",
+    "currencySymbol": "Db",
+    "flagUrl": "https://flagcdn.com/w320/st.png"
+  },
+  {
+    "countryCode": "SV",
+    "currencyCode": "SVC",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/sv.png"
+  },
+  {
+    "countryCode": "SY",
+    "currencyCode": "SYP",
+    "currencySymbol": "ل.س",
+    "flagUrl": "https://flagcdn.com/w320/sy.png"
+  },
+  {
+    "countryCode": "SZ",
+    "currencyCode": "SZL",
+    "currencySymbol": "L",
+    "flagUrl": "https://flagcdn.com/w320/sz.png"
+  },
+  {
+    "countryCode": "TH",
+    "currencyCode": "THB",
+    "currencySymbol": "฿",
+    "flagUrl": "https://flagcdn.com/w320/th.png"
+  },
+  {
+    "countryCode": "TJ",
+    "currencyCode": "TJS",
+    "currencySymbol": "SM",
+    "flagUrl": "https://flagcdn.com/w320/tj.png"
+  },
+  {
+    "countryCode": "TM",
+    "currencyCode": "TMT",
+    "currencySymbol": "m",
+    "flagUrl": "https://flagcdn.com/w320/tm.png"
+  },
+  {
+    "countryCode": "TN",
+    "currencyCode": "TND",
+    "currencySymbol": "د.ت",
+    "flagUrl": "https://flagcdn.com/w320/tn.png"
+  },
+  {
+    "countryCode": "TO",
+    "currencyCode": "TOP",
+    "currencySymbol": "T$",
+    "flagUrl": "https://flagcdn.com/w320/to.png"
+  },
+  {
+    "countryCode": "TR",
+    "currencyCode": "TRY",
+    "currencySymbol": "₺",
+    "flagUrl": "https://flagcdn.com/w320/tr.png"
+  },
+  {
+    "countryCode": "TT",
+    "currencyCode": "TTD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/tt.png"
+  },
+  {
+    "countryCode": "TW",
+    "currencyCode": "TWD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/tw.png"
+  },
+  {
+    "countryCode": "TZ",
+    "currencyCode": "TZS",
+    "currencySymbol": "Sh",
+    "flagUrl": "https://flagcdn.com/w320/tz.png"
+  },
+  {
+    "countryCode": "UA",
+    "currencyCode": "UAH",
+    "currencySymbol": "₴",
+    "flagUrl": "https://flagcdn.com/w320/ua.png"
+  },
+  {
+    "countryCode": "UG",
+    "currencyCode": "UGX",
+    "currencySymbol": "Sh",
+    "flagUrl": "https://flagcdn.com/w320/ug.png"
+  },
+  {
+    "countryCode": "US",
+    "currencyCode": "USD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/us.png"
+  },
+  {
+    "countryCode": "UY",
+    "currencyCode": "UYU",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/uy.png"
+  },
+  {
+    "countryCode": "UZ",
+    "currencyCode": "UZS",
+    "currencySymbol": "сум",
+    "flagUrl": "https://flagcdn.com/w320/uz.png"
+  },
+  {
+    "countryCode": "VE",
+    "currencyCode": "VES",
+    "currencySymbol": "Bs.S",
+    "flagUrl": "https://flagcdn.com/w320/ve.png"
+  },
+  {
+    "countryCode": "VN",
+    "currencyCode": "VND",
+    "currencySymbol": "₫",
+    "flagUrl": "https://flagcdn.com/w320/vn.png"
+  },
+  {
+    "countryCode": "VU",
+    "currencyCode": "VUV",
+    "currencySymbol": "Vt",
+    "flagUrl": "https://flagcdn.com/w320/vu.png"
+  },
+  {
+    "countryCode": "WS",
+    "currencyCode": "WST",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/ws.png"
+  },
+  {
+    "countryCode": "XAF",
+    "currencyCode": "CFA",
+    "currencySymbol": "Fr",
+    "flagUrl": "https://flagcdn.com/w320/xaf.png"
+  },
+  {
+    "countryCode": "XCD",
+    "currencyCode": "XCD",
+    "currencySymbol": "$",
+    "flagUrl": "https://flagcdn.com/w320/xcd.png"
+  },
+  {
+    "countryCode": "XOF",
+    "currencyCode": "CFA",
+    "currencySymbol": "Fr",
+    "flagUrl": "https://flagcdn.com/w320/xof.png"
+  },
+  {
+    "countryCode": "XPF",
+    "currencyCode": "CFP",
+    "currencySymbol": "Fr",
+    "flagUrl": "https://flagcdn.com/w320/xpf.png"
+  },
+  {
+    "countryCode": "YE",
+    "currencyCode": "YER",
+    "currencySymbol": "﷼",
+    "flagUrl": "https://flagcdn.com/w320/ye.png"
+  },
+  {
+    "countryCode": "ZA",
+    "currencyCode": "ZAR",
+    "currencySymbol": "R",
+    "flagUrl": "https://flagcdn.com/w320/za.png"
+  },
+  {
+    "countryCode": "ZM",
+    "currencyCode": "ZMW",
+    "currencySymbol": "ZK",
+    "flagUrl": "https://flagcdn.com/w320/zm.png"
+  }
+]

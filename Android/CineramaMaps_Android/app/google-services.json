@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "257026238302",
+    "project_id": "cinaramamap",
+    "storage_bucket": "cinaramamap.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257026238302:android:7806797e95ae132974d1cf",
+        "android_client_info": {
+          "package_name": "main.com.cineramamaps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257026238302-e2rc67946ilq2f0hvunbntc3rag07bqv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "main.com.cineramamaps",
+            "certificate_hash": "537f689f5ba3c20de07ad93dbe3d44415e75c87f"
+          }
+        },
+        {
+          "client_id": "257026238302-pt4eaelp6uutlul2kb0jsb6pjh9p7coa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi7VuMCtQWejsKytLNdqgyoe35ElhXcVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257026238302-pt4eaelp6uutlul2kb0jsb6pjh9p7coa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "257026238302-duksfjbcucnnhmqg6ioij7ds1un41tv4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Main.CineramaMap"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

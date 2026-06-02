@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layoutDirection="ltr"
+    tools:context=".Fragments.FragmentUserType">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+
+        >
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+
+
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                       >
+
+                        <LinearLayout
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/userimage"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:src="@drawable/profile"></de.hdodenhof.circleimageview.CircleImageView>
+<LinearLayout
+    android:layout_marginStart="10dp"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <main.com.cineramamaps.customfont.BoldTextView
+        android:id="@+id/usernametv"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:text="Shyam Vijaywargiya"
+        android:textColor="@color/black"
+        android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+    <main.com.cineramamaps.customfont.RegularTextView
+        android:id="@+id/mobiletv"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="+919098577866"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small"></main.com.cineramamaps.customfont.RegularTextView>
+
+
+</LinearLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/lightgrey"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="vertical">
+
+
+                        <main.com.cineramamaps.customfont.BoldTextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:text="@string/help"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/chanpasslay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:padding="2dp">
+
+                            <ImageView
+                                android:visibility="visible"
+                                android:id="@+id/chgpas"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/password"
+                               ></ImageView>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@+id/chgpas"
+                                android:text="@string/changepassword"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"></main.com.cineramamaps.customfont.RegularTextView>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/walletlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:padding="2dp">
+
+                            <ImageView
+                                android:visibility="visible"
+                                android:id="@+id/wallet"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/wallet"
+                               ></ImageView>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@+id/wallet"
+                                android:text="@string/wallet"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"></main.com.cineramamaps.customfont.RegularTextView>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/moneysavedlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:padding="2dp">
+
+                            <ImageView
+                                android:visibility="visible"
+                                android:id="@+id/chgpasaa"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/money_saved"
+                               ></ImageView>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@+id/chgpasaa"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"></main.com.cineramamaps.customfont.RegularTextView>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:visibility="visible"
+                            android:id="@+id/langlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:padding="2dp">
+
+                            <ImageView
+                                android:id="@+id/lang"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/language"></ImageView>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@+id/lang"
+                                android:text="@string/language"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"></main.com.cineramamaps.customfont.RegularTextView>
+                        </RelativeLayout>
+
+
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/faqlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:padding="2dp">
+
+                            <ImageView
+                                android:visibility="visible"
+                                android:id="@+id/prcra"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/faq"></ImageView>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@+id/prcra"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"></main.com.cineramamaps.customfont.RegularTextView>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/privacypolicy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:padding="2dp">
+
+                            <ImageView
+                                android:visibility="visible"
+                                android:id="@+id/prc"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/privacy"></ImageView>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@+id/prc"
+                                android:text="@string/privacypolicy"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"></main.com.cineramamaps.customfont.RegularTextView>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:visibility="visible"
+                            android:id="@+id/contactuslay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:padding="2dp">
+
+                            <ImageView
+                                android:visibility="visible"
+                                android:id="@+id/con"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/writetous"></ImageView>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@+id/con"
+                                android:text="@string/contactus"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"></main.com.cineramamaps.customfont.RegularTextView>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/termslay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:padding="2dp">
+
+                            <ImageView
+                                android:visibility="visible"
+                                android:id="@+id/ter"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/termsofservice"></ImageView>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@+id/ter"
+                                android:text="@string/termsandconditions"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"></main.com.cineramamaps.customfont.RegularTextView>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/logoutlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:padding="2dp">
+
+                            <ImageView
+                                android:id="@+id/logout"
+                                android:visibility="visible"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/logout"></ImageView>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:id="@+id/logiventv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@+id/logout"
+                                android:text="@string/logout"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"></main.com.cineramamaps.customfont.RegularTextView>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/lightgrey"></View>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="vertical">
+
+                        <main.com.cineramamaps.customfont.BoldTextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:text="@string/discounts"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medium"></main.com.cineramamaps.customfont.BoldTextView>
+
+                        <RelativeLayout
+                            android:visibility="visible"
+                            android:id="@+id/referfriends"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:padding="2dp">
+
+                            <ImageView
+                                android:visibility="visible"
+                                android:id="@+id/gggg"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/invitefriend"
+                                ></ImageView>
+
+                            <main.com.cineramamaps.customfont.RegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_toEndOf="@+id/gggg"
+                                android:text="@string/invitefriend"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/small"></main.com.cineramamaps.customfont.RegularTextView>
+                        </RelativeLayout>
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

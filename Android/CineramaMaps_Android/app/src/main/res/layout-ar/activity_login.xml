@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.LoginAct"
+    android:layoutDirection="rtl">
+<ScrollView
+    android:background="@color/toolbarcol"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/mainlay"
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+            android:visibility="visible">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_round_dra_white"
+                android:visibility="visible">
+
+                <Spinner
+                    android:id="@+id/language_spinner"
+                    android:layout_width="110dp"
+                    android:layout_height="35dp"></Spinner>
+
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/backbut"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                app:cardBackgroundColor="@color/toolbarcol"
+                app:cardCornerRadius="40dp">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/back"
+                    android:rotation="180"
+                    android:backgroundTint="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainlay"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginRight="10dp"
+
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/backlay"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_back"
+                    android:tint="@color/toolbarcol"></ImageView>
+
+            </RelativeLayout>
+
+            <TextView
+
+                android:id="@+id/skip_tv"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/button_round_dra"
+                android:gravity="center"
+                android:text="@string/skiplogin"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+
+
+
+
+
+            <View
+                android:layout_width="80dp"
+                android:layout_height="0.5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/darkgrey"
+                android:visibility="gone"></View>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/accountregistration"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:src="@drawable/app_icon_new1"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/msgtv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_but"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="@string/youremail"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                android:visibility="visible" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_round_dra"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <com.hbb20.CountryCodePicker
+                                android:id="@+id/ccp"
+                                app:ccp_defaultLanguage="ARABIC"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                />
+                            <!--   app:ccp_defaultNameCode="MV"
+                                            app:ccp_customMasterCountries="MV"-->
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+
+                    <main.com.cineramamaps.customfont.RegularEditView
+                        android:id="@+id/phone_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@null"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:hint="@string/emailaddress"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:inputType="textEmailAddress"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_but"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="@string/verificationcodesenttoemail"
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                android:visibility="visible" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:visibility="gone"
+                android:background="@drawable/edit_round_dra"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <ImageView
+                    android:id="@+id/mailicon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/mail"
+                    android:visibility="visible" />
+
+                <main.com.cineramamaps.customfont.RegularEditView
+                    android:id="@+id/email_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_centerInParent="true"
+                    android:layout_toEndOf="@+id/mailicon"
+                    android:background="@null"
+                    android:hint="@string/email"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:visibility="gone"
+                android:background="@drawable/edit_round_dra"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <ImageView
+                    android:id="@+id/passicon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/pass"
+                    android:visibility="visible" />
+
+                <main.com.cineramamaps.customfont.RegularEditView
+                    android:id="@+id/password_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_centerInParent="true"
+                    android:layout_toEndOf="@+id/passicon"
+                    android:background="@null"
+                    android:hint="@string/password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:padding="10dp" />
+                <ImageView
+                    android:id="@+id/eyes"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/view_eye"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+
+            <main.com.cineramamaps.customfont.RegularTextView
+                android:id="@+id/forgot_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="end"
+                android:textSize="16dp"
+                android:text="@string/forgotpass"
+                android:textColor="@color/darkgrey"
+                android:visibility="gone" />
+
+            <main.com.cineramamaps.customfont.BoldTextView
+
+                android:id="@+id/loginbut"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/button_round_dra"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/medium" />
+            <main.com.cineramamaps.customfont.RegularTextView
+                android:id="@+id/or_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="@string/ortxt"
+                android:textColor="@color/grey"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/botumlay"
+                android:visibility="gone"
+                android:layout_marginBottom="20dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/donthaveaccount"
+
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <main.com.cineramamaps.customfont.RegularTextView
+
+
+                        android:gravity="center"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/donthaveaccount"
+                        android:textColor="@color/darkgrey" />
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <main.com.cineramamaps.customfont.BoldTextView
+
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:gravity="center"
+                            android:id="@+id/signupnow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+android:textStyle="bold"
+                            android:text="@string/signupnow"
+                            android:textColor="@color/toolbarcol" />
+                        <View
+                            android:layout_marginTop="1dp"
+                            android:background="@color/toolbarcol"
+                            android:layout_width="45dp"
+                            android:layout_height="1dp"></View>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:visibility="visible"
+                android:id="@+id/googlelay"
+                android:background="@drawable/button_round_dra_white"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="0dp"
+                        android:src="@drawable/googleplus" />
+                <main.com.cineramamaps.customfont.BoldTextView
+                    android:layout_toEndOf="@+id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/googlelogintxt"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <main.com.cineramamaps.customfont.RegularTextView
+                android:id="@+id/term_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/byregisteragreeterm"
+                android:textColor="@color/grey"
+                android:textSize="15dp"
+                android:visibility="visible" />
+<!--            <main.com.cineramamaps.customfont.RegularTextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:gravity="bottom|center"-->
+<!--                android:text="@string/loginbottontxt"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15dp"-->
+<!--                android:visibility="visible" />-->
+
+
+        </LinearLayout>
+        <ProgressBar
+            android:elevation="5dp"
+            android:visibility="gone"
+            android:id="@+id/progressbar"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></ProgressBar>
+
+        <main.com.cineramamaps.customfont.RegularTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:text="@string/loginbottontxt"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</ScrollView>
+</layout>
