@@ -1,0 +1,305 @@
+//
+//  MapVC.swift
+//  Cinerama Maps
+//
+//  Created by Techimmense Software Solutions on 22/08/24.
+//
+
+import UIKit
+import SwiftUI
+import SkeletonView
+
+class MapVC: UIViewController {
+    
+    @IBOutlet weak var map_Collection: UICollectionView!
+    @IBOutlet weak var collection_Height: NSLayoutConstraint!
+    @IBOutlet weak var cityMap_Table: UITableView!
+    @IBOutlet weak var tableVw_Height: NSLayoutConstraint!
+    
+    @IBOutlet weak var mapTypeVw: UIView!
+    @IBOutlet weak var suggestBoxVw: UIStackView!
+    
+    @IBOutlet weak var map_HeadingVw: UIView!
+    @IBOutlet weak var search_HeadingVw: UIView!
+    
+    @IBOutlet weak var search_Bar: UISearchBar!
+    @IBOutlet weak var btn_AllMapOt: UIButton!
+    @IBOutlet weak var btn_MyMapOt: UIButton!
+
+    @IBOutlet weak var lbl_MapText: UILabel!
+    @IBOutlet weak var lbl_ChooseCity: UILabel!
+    
+    let viewModel = MapViewModel()
+    let countryMapVM = CountryMapApiViewModel()
+    let cityMapVM = PurchasedCityViewModel()
+    
+    var decided_Ui = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        map_Collection.isSkeletonable = true
+        cityMap_Table.isSkeletonable = true
+
+        self.viewModel.setupSearchBar(for: search_Bar)
+        
+        self.map_Collection.register(UINib(nibName: "MapCell", bundle: nil), forCellWithReuseIdentifier: "MapCell")
+        self.cityMap_Table.register(UINib(nibName: "CityMapCell", bundle: nil), forCellReuseIdentifier: "CityMapCell")
+        self.map_Collection.isHidden = false
+        self.cityMap_Table.isHidden = true
+        
+        if decided_Ui == "Search" {
+            self.map_HeadingVw.isHidden = true
+            self.search_HeadingVw.isHidden = false
+        } else {
+            self.map_HeadingVw.isHidden = false
+            self.search_HeadingVw.isHidden = true
+        }
+        
+        self.search_Bar.delegate = self
+        self.search_Bar.showsScopeBar = true
+        self.search_Bar.returnKeyType = .done
+        
+        self.requestCountryMap()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+        if decided_Ui == "Search" {
+            self.tabBarController?.tabBar.isHidden = true
+        } else {
+            self.tabBarController?.tabBar.isHidden = false
+        }
+    }
+    
+    @IBAction func btn_Back(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func requestCountryMap() {
+        map_Collection.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .systemGray5))
+        
+        countryMapVM.fetchCountryMaps(vC: self)
+        countryMapVM.fethcedSuccessfully = { [weak self] in
+            guard let self else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.map_Collection.stopSkeletonAnimation()
+                self.map_Collection.hideSkeleton(reloadDataAfter: true)
+            }
+        }
+    }
+    
+    func requestCityMaps() {
+        cityMap_Table.showAnimatedGradientSkeleton (
+            usingGradient: .init(baseColor: .systemGray5),
+            animation: nil,
+            transition: .crossDissolve(0.25)
+        )
+        
+        cityMapVM.fetchPurchaseCityMap(vC: self, tableView: cityMap_Table, tableHeight: tableVw_Height)
+        cityMapVM.requestSuccessfull = { [weak self] in
+            guard let self else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.cityMap_Table.stopSkeletonAnimation()
+                self.cityMap_Table.hideSkeleton(reloadDataAfter: true)
+            }
+        }
+    }
+    
+    @IBAction func btn_MapType(_ sender: UIButton) {
+        if sender.tag == 0 {
+            btn_AllMapOt.setTitleColor(.white, for: .normal)
+            btn_MyMapOt.setTitleColor(.black, for: .normal)
+            btn_AllMapOt.backgroundColor = R.color.main()
+            btn_MyMapOt.backgroundColor = .clear
+            self.map_Collection.isHidden = false
+            self.cityMap_Table.isHidden = true
+            requestCountryMap()
+        } else {
+            btn_AllMapOt.setTitleColor(.black, for: .normal)
+            btn_MyMapOt.setTitleColor(.white, for: .normal)
+            btn_AllMapOt.backgroundColor = .clear
+            btn_MyMapOt.backgroundColor = R.color.main()
+            self.map_Collection.isHidden = true
+            self.cityMap_Table.isHidden = false
+            requestCityMaps()
+        }
+    }
+    
+    @IBAction func btn_SubmitSuggestion(_ sender: UIButton) {
+        let vC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SuggestionVC") as! SuggestionVC
+        self.navigationController?.pushViewController(vC, animated: true)
+    }
+}
+
+extension MapVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.countryMapVM.arrayCountryMaps.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MapCell", for: indexPath) as! MapCell
+        let numberOfItemsInRow = 2 // You can adjust this based on your layout
+        let numberOfRows = (self.countryMapVM.arrayCountryMaps.count + numberOfItemsInRow - 1) / numberOfItemsInRow
+        let cellHeight: CGFloat = 140
+        self.collection_Height.constant = CGFloat(numberOfRows) * cellHeight
+        
+        let obj = self.countryMapVM.arrayCountryMaps[indexPath.row]
+        
+        if L102Language.currentAppleLanguage() == "en" {
+            cell.lbl_CountryName.text = obj.name ?? ""
+        } else {
+            cell.lbl_CountryName.text = obj.name_ar ?? ""
+        }
+        
+        if Router.BASE_IMAGE_URL != obj.image {
+            Utility.setImageWithSDWebImage(obj.image ?? "", cell.CountryImage)
+        } else {
+            cell.CountryImage.image = R.image.blank()
+        }
+        
+        if Router.BASE_IMAGE_URL != obj.country_icon {
+            Utility.setImageWithSDWebImage(obj.country_icon ?? "", cell.countryMap)
+        } else {
+            cell.countryMap.image = R.image.blank()
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let collectionWd = collectionView.frame.width
+        return CGSize(width: collectionWd / 2, height: 140)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let country = self.countryMapVM.arrayCountryMaps[indexPath.row]
+        
+        let countryId = country.id ?? ""
+        let countryName = L102Language.currentAppleLanguage() == "en"
+        ? (country.name ?? "")
+        : (country.name_ar ?? "")
+        
+        viewModel.navigateToCityMapsViewController (
+            from: self.navigationController,
+            countryId: countryId,
+            countryName: countryName
+        )
+    }
+    
+}
+
+extension MapVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cityMapVM.arrayOfPurchasedCityMap.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CityMapCell", for: indexPath) as! CityMapCell
+                
+        let obj = self.cityMapVM.arrayOfPurchasedCityMap[indexPath.row]
+        
+        if L102Language.currentAppleLanguage() == "en" {
+            cell.lbl_CountryName.text = obj.name ?? ""
+        } else {
+            cell.lbl_CountryName.text = obj.name_ar ?? ""
+        }
+        cell.lbl_Rating.text = obj.avg_rating ?? ""
+        cell.lbl_Address.text = obj.address ?? ""
+        cell.rating_Vw.rating = Double(obj.avg_rating ?? "") ?? 0.0
+        
+        if Router.BASE_IMAGE_URL != obj.image {
+            Utility.setImageWithSDWebImage(obj.image ?? "", cell.img)
+        } else {
+            cell.img.image = R.image.blank()
+        }
+        
+        if obj.fav_status == "Yes" {
+            cell.btn_FavOt.tintColor = R.color.main()
+        } else {
+            cell.btn_FavOt.tintColor = .lightGray
+        }
+        
+        cell.cloFav = { [] in
+            self.cityMapVM.fetchFavAndUnFavMap(vC: self, cityId: obj.id ?? "")
+            self.cityMapVM.requestSuccessfull = { [] in
+                self.requestCityMaps()
+            }
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SubscriptionMapVC") as! SubscriptionMapVC
+        vC.viewModel.cityId = self.cityMapVM.arrayOfPurchasedCityMap[indexPath.row].id ?? ""
+        vC.cityId = self.cityMapVM.arrayOfPurchasedCityMap[indexPath.row].id ?? ""
+        navigationController?.pushViewController(vC, animated: true)
+    }
+}
+
+extension MapVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            self.countryMapVM.arrayCountryMaps = self.countryMapVM.arrayFilteredCountryMaps
+            self.cityMapVM.arrayOfPurchasedCityMap = self.cityMapVM.arrayOfFilterPurchaseCityMap
+        } else {
+            if self.cityMap_Table.isHidden == true {
+                self.countryMapVM.arrayCountryMaps = self.countryMapVM.arrayFilteredCountryMaps.filter {
+                    $0.name?.range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil
+                }
+            } else {
+                self.cityMapVM.arrayOfPurchasedCityMap = self.cityMapVM.arrayOfFilterPurchaseCityMap.filter {
+                    $0.name?.range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil
+                }
+            }
+        }
+        self.map_Collection.reloadData()
+        self.cityMap_Table.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.search_Bar.endEditing(true)
+    }
+}
+
+extension MapVC: SkeletonCollectionViewDataSource, SkeletonCollectionViewDelegate {
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "MapCell"
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6 // ✅ Show 6 shimmer placeholders while loading
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let collectionWd = skeletonView.frame.width
+        return CGSize(width: collectionWd / 2, height: 140)
+    }
+}
+
+extension MapVC: SkeletonTableViewDataSource {
+    //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //        return cityMapVM.arrayOfPurchasedCityMap.count
+    //    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "CityMapCell"
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4 // ✅ Show 4 shimmer placeholders while loading
+    }
+    
+}

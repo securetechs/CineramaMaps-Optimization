@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "JG2-M3-rx0.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"10%\"; ObjectID = \"JG2-M3-rx0\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "10%"
+          }
+        }
+      }
+    },
+    "MEw-m6-IxY.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Get a 20% discount at Kabab Gee restaurant Get a 20% discount at Kabab Gee restaurant\"; ObjectID = \"MEw-m6-IxY\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get a 20% discount at Kabab Gee restaurant Get a 20% discount at Kabab Gee restaurant"
+          }
+        }
+      }
+    },
+    "WyU-YD-kos.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Turkey, Istanbul\"; ObjectID = \"WyU-YD-kos\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Turkey, Istanbul"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}
