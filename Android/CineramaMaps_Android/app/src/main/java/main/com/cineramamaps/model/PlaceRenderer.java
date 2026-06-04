@@ -42,7 +42,12 @@ public class PlaceRenderer extends DefaultClusterRenderer<PlaceItem> {
 
         if (firstItem.getIcon() != null) {
             List<PlaceItem> items = new ArrayList<>(cluster.getItems());
-            markerOptions.icon(BitmapDescriptorFactory.fromBitmap(buildClusterIcon(items)));
+            Bitmap clusterBmp = buildClusterIcon(items);
+            if (clusterBmp != null) {
+                markerOptions.icon(BitmapDescriptorFactory.fromBitmap(clusterBmp));
+            } else {
+                markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+            }
         } else {
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         }
@@ -58,11 +63,7 @@ public class PlaceRenderer extends DefaultClusterRenderer<PlaceItem> {
 
     @Override
     protected void onClusterItemUpdated(@NonNull PlaceItem item, @NonNull Marker marker) {
-        if (isZoomedIn && item.getIconBitmap() != null) {
-            marker.setIcon(BitmapDescriptorFactory.fromBitmap(item.getIconBitmap()));
-        } else if (item.getIconDrawable() != null) {
-            marker.setIcon(BitmapDescriptorFactory.fromBitmap(item.getIconDrawable()));
-        } else if (item.getIcon() != null) {
+        if (item.getIcon() != null) {
             marker.setIcon(item.getIcon());
         } else {
             marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
@@ -76,7 +77,12 @@ public class PlaceRenderer extends DefaultClusterRenderer<PlaceItem> {
         PlaceItem firstItem = cluster.getItems().iterator().next();
         if (firstItem.getIcon() != null) {
             List<PlaceItem> items = new ArrayList<>(cluster.getItems());
-            marker.setIcon(BitmapDescriptorFactory.fromBitmap(buildClusterIcon(items)));
+            Bitmap clusterBmp = buildClusterIcon(items);
+            if (clusterBmp != null) {
+                marker.setIcon(BitmapDescriptorFactory.fromBitmap(clusterBmp));
+            } else {
+                marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+            }
         } else {
             marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         }
@@ -86,27 +92,9 @@ public class PlaceRenderer extends DefaultClusterRenderer<PlaceItem> {
 
     /**
      * Called from PlacesListActivity when zoom changes.
-     * Swaps all visible markers between zoomed (with place name) and unzoomed (icon only).
      */
     public void updateZoomState(boolean zoomed) {
-        if (this.isZoomedIn == zoomed) return;
         this.isZoomedIn = zoomed;
-
-        for (Map.Entry<PlaceItem, Marker> entry : itemMarkerMap.entrySet()) {
-            PlaceItem item = entry.getKey();
-            Marker marker = entry.getValue();
-            if (marker == null) continue;
-
-            try {
-                if (zoomed && item.getIconBitmap() != null) {
-                    marker.setIcon(BitmapDescriptorFactory.fromBitmap(item.getIconBitmap()));
-                } else if (!zoomed && item.getIconDrawable() != null) {
-                    marker.setIcon(BitmapDescriptorFactory.fromBitmap(item.getIconDrawable()));
-                }
-            } catch (Exception e) {
-                // Marker may have been removed
-            }
-        }
     }
 
     public boolean isZoomedIn() {

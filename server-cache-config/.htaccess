@@ -1,25 +1,25 @@
 # Cache-Control headers for CineramaMaps API and static assets
-# Upload this to /development/CineramaMaps/ on the server
+# Upload this to /development/CineramaMaps/webservice/ on the server
 
 <IfModule mod_headers.c>
-    # Cache images for 30 days
+    # Cache images for 3 days
     <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico)$">
-        Header set Cache-Control "public, max-age=2592000"
+        Header set Cache-Control "public, max-age=259200"
     </FilesMatch>
 
-    # Cache API JSON responses for 5 minutes
+    # Cache API JSON responses for 2 minutes
     <FilesMatch "\.php$">
-        Header set Cache-Control "public, max-age=300"
+        Header set Cache-Control "public, max-age=120"
     </FilesMatch>
 </IfModule>
 
 <IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresByType image/jpeg "access plus 30 days"
-    ExpiresByType image/png "access plus 30 days"
-    ExpiresByType image/svg+xml "access plus 30 days"
-    ExpiresByType image/webp "access plus 30 days"
-    ExpiresByType application/json "access plus 5 minutes"
+    ExpiresByType image/jpeg "access plus 3 days"
+    ExpiresByType image/png "access plus 3 days"
+    ExpiresByType image/svg+xml "access plus 3 days"
+    ExpiresByType image/webp "access plus 3 days"
+    ExpiresByType application/json "access plus 2 minutes"
 </IfModule>
 
 # Enable gzip compression

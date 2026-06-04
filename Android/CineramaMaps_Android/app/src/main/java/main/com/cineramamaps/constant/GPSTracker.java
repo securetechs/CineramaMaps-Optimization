@@ -21,7 +21,6 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.Priority;
 
 public class GPSTracker extends Service {
     private final Context mContext;
@@ -75,10 +74,10 @@ public class GPSTracker extends Service {
             });
 
             // Request updates for continuous tracking
-            LocationRequest locationRequest = new LocationRequest.Builder(
-                    Priority.PRIORITY_HIGH_ACCURACY, UPDATE_INTERVAL)
-                    .setMinUpdateIntervalMillis(FASTEST_INTERVAL)
-                    .build();
+            LocationRequest locationRequest = LocationRequest.create()
+                    .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+                    .setInterval(UPDATE_INTERVAL)
+                    .setFastestInterval(FASTEST_INTERVAL);
 
             locationCallback = new LocationCallback() {
                 @Override

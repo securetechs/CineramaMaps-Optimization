@@ -41,6 +41,7 @@ import java.util.Locale;
  import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import main.com.cineramamaps.restapi.ApiCall;
 
 /**
  * Created by shubham on 22/01/25.
@@ -74,6 +75,7 @@ public class MyApplication extends MultiDexApplication  implements Application.A
         super.onCreate();
         try {
             mInstance = this;
+            ApiCall.init(this);
             registerActivityLifecycleCallbacks(this);
         } catch (Exception e) {
             e.printStackTrace();
