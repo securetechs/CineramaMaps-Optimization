@@ -222,7 +222,23 @@ struct SearchMapView: View {
                                     SkeletonLocdetailCard()
                                 }
                             } else {
-                                let placedetail = viewModel.newFilter.prefix(viewModel.itemsToShow)
+                                let sortedPlaces: [Place_details] = {
+                                    switch selectedfilter {
+                                    case R.string.localizable.name(), "Name":
+                                        return viewModel.newFilter.sorted { ($0.place_name ?? "").lowercased() < ($1.place_name ?? "").lowercased() }
+                                    case "Oldest":
+                                        return viewModel.newFilter.sorted { ($0.date_time ?? "") < ($1.date_time ?? "") }
+                                    case "Distance":
+                                        return viewModel.newFilter.sorted {
+                                            (Double($0.distance ?? "") ?? Double.greatestFiniteMagnitude) < (Double($1.distance ?? "") ?? Double.greatestFiniteMagnitude)
+                                        }
+                                    default: // Popular
+                                        return viewModel.newFilter.sorted {
+                                            (Double($0.rating ?? "") ?? 0) > (Double($1.rating ?? "") ?? 0)
+                                        }
+                                    }
+                                }()
+                                let placedetail = sortedPlaces.prefix(viewModel.itemsToShow)
                                 ForEach(Array(placedetail.enumerated()), id: \.element.id) { index, tag in
                                     let matchedImages = viewModel.arrayImageDetail.filter { $0.place_id == tag.id }
                                     let placeimage = matchedImages.first
