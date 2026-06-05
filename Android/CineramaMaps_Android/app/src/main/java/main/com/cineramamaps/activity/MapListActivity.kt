@@ -171,13 +171,13 @@ fun ListViewContent(
 
     var selectedIndex by remember { mutableStateOf(-1) } // -1 = All, -2 = Favorites
     var expanded by remember { mutableStateOf(false) }
-    var selectedOption by remember { mutableStateOf("Popular") }
+    var selectedSortIndex by remember { mutableStateOf(0) } // 0=Popular, 1=Name, 2=Oldest, 3=Distance
 
-    // ✅ Updated filtering logic (supports Favorite)
-    val filteredPlaces = remember(place, tags, selectedIndex) {
-        when {
+    // ✅ Updated filtering + sorting logic
+    val filteredPlaces = remember(place, tags, selectedIndex, selectedSortIndex) {
+        val filtered = when {
             selectedIndex == -1 || place == null -> place
-            selectedIndex == -2 -> place.filter { it.isCurrentUserFavorite == true }.toMutableStateList()
+            selectedIndex == -2 -> place.filter { it.isCurrentUserFavorite == true }
             tags != null && selectedIndex in tags.indices -> {
                 val selectedTag = tags[selectedIndex]
                 place.filter { placeDetail ->
@@ -186,7 +186,22 @@ fun ListViewContent(
             }
             else -> place
         }
-    }?.let { it as? SnapshotStateList<PlaceDetail> ?: it.toMutableStateList() }
+        // Apply sorting
+        filtered?.let { list ->
+            when (selectedSortIndex) {
+                1 -> list.sortedBy { it.placeName?.lowercase() ?: "" } // Name A-Z
+                2 -> list.sortedBy { it.dateTime ?: "" } // Oldest first
+                3 -> list.sortedBy { // Distance (nearest first)
+                    try { it.distance?.toDouble() ?: Double.MAX_VALUE }
+                    catch (_: Exception) { Double.MAX_VALUE }
+                }
+                else -> list.sortedByDescending { // Popular (highest rating first)
+                    try { it.rating?.toDouble() ?: 0.0 }
+                    catch (_: Exception) { 0.0 }
+                }
+            }
+        }
+    }?.toMutableStateList()
 
     Column(
         modifier = Modifier
@@ -318,7 +333,7 @@ fun ListViewContent(
                         modifier = Modifier.padding(top = 16.dp)
                     )
                     Text(
-                        text = selectedOption,
+                        text = options.getOrElse(selectedSortIndex) { options[0] },
                         fontSize = 14.sp,
                         fontFamily = cairoFamily,
                         color = Color(0xFFFF5722),
@@ -343,7 +358,7 @@ fun ListViewContent(
                     options.forEachIndexed { index, option ->
                         DropdownMenuItem(
                             onClick = {
-                                selectedOption = option
+                                selectedSortIndex = index
                                 expanded = false
                             },
                             text = {
@@ -354,7 +369,7 @@ fun ListViewContent(
                                         fontFamily = cairoFamily,
                                         modifier = Modifier.weight(1f)
                                     )
-                                    val iconRes = if (option == selectedOption)
+                                    val iconRes = if (index == selectedSortIndex)
                                         R.drawable.ic_selectedring
                                     else
                                         R.drawable.ic_unselectedring
