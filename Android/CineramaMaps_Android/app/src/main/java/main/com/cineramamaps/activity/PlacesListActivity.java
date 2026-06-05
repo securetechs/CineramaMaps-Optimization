@@ -1042,6 +1042,7 @@ public class PlacesListActivity extends AppCompatActivity implements OnMapReadyC
                         try {
                             String jsonData = JsonCacheUtils.readJsonFromFile(cached.getFilePath());
                             loadDataFromJson(jsonData, true); // show immediately
+                            binding.progressbar.setVisibility(View.GONE); // hide spinner after cache loads
                         } catch (Exception e) {
                             Log.e("Cache", "Cache read error", e);
                         }
