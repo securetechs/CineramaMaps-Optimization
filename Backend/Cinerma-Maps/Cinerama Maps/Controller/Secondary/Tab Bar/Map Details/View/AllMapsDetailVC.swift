@@ -116,7 +116,15 @@ class AllMapsDetailVC: UIViewController {
         super.viewDidLoad()
         
         self.mapView.delegate = self
-        
+
+        // Hide Google POIs (coffee shops, restaurants, transit)
+        do {
+            let style = "[{\"featureType\":\"poi\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"transit\",\"stylers\":[{\"visibility\":\"off\"}]}]"
+            self.mapView.mapStyle = try GMSMapStyle(jsonString: style)
+        } catch {
+            print("Failed to set map style: \(error)")
+        }
+
         self.totalAmount = amountForCity.round()
         self.registerIdentifiers()
         self.configureiUUpdates()
@@ -565,11 +573,12 @@ class AllMapsDetailVC: UIViewController {
     }
     
     private func addMarker(for cityMap: Place_details, at coordinate: CLLocationCoordinate2D, using markerView: MapMarkerView) {
-        markerView.lblPlaceName.alpha = 1
-        markerView.txtHeight.constant = 20
+        // Hide titles on mini-map
+        markerView.lblPlaceName.alpha = 0
+        markerView.txtHeight.constant = 0
         markerView.layoutIfNeeded()
         let iconZoomed = renderMarkerViewAsImage(markerView: markerView)
-        
+
         markerView.lblPlaceName.alpha = 0
         markerView.txtHeight.constant = 0
         markerView.layoutIfNeeded()
@@ -796,29 +805,34 @@ extension AllMapsDetailVC: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         let zoom = position.zoom
 
-        let clusterDistance: UInt
-        switch zoom {
-        case 0...7:   clusterDistance = 75
-        case 7...10:  clusterDistance = 50
-        case 10...15: clusterDistance = 25
-        default:      clusterDistance = 0
-        }
+        // Hide all pins when zoom level reaches 12
+        let shouldHide = zoom >= 12.0
+        mapView.clear()
+        if !shouldHide {
+            let clusterDistance: UInt
+            switch zoom {
+            case 0...7:   clusterDistance = 75
+            case 7...10:  clusterDistance = 50
+            case 10...15: clusterDistance = 25
+            default:      clusterDistance = 0
+            }
 
-        // Only recreate cluster manager if distance threshold changed
-        guard clusterDistance != lastClusterDistance else {
+            // Only recreate cluster manager if distance threshold changed
+            guard clusterDistance != lastClusterDistance else {
+                clusterManager.cluster()
+                return
+            }
+            lastClusterDistance = clusterDistance
+
+            guard let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm(
+                clusterDistancePoints: clusterDistance
+            ) else { return }
+
+            clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: clusterRenderer)
+            clusterManager.setDelegate(self, mapDelegate: self)
+            clusterManager.add(marklers)
             clusterManager.cluster()
-            return
         }
-        lastClusterDistance = clusterDistance
-
-        guard let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm(
-            clusterDistancePoints: clusterDistance
-        ) else { return }
-
-        clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: clusterRenderer)
-        clusterManager.setDelegate(self, mapDelegate: self)
-        clusterManager.add(marklers)
-        clusterManager.cluster()
     }
 }
 

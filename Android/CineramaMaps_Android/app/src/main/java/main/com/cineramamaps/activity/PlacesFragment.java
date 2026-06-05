@@ -39,6 +39,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -83,14 +84,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
-import java.io.File;
-
 import main.com.cineramamaps.R;
 import main.com.cineramamaps.Session.SessionManager;
-import main.com.cineramamaps.Utils.JsonCacheUtils;
 import main.com.cineramamaps.Utils.Tools;
-import main.com.cineramamaps.database.AppDatabase;
-import main.com.cineramamaps.Entity.Room.PlacesEntity;
 import main.com.cineramamaps.adapter.TagsAdapter;
 import main.com.cineramamaps.constant.BaseUrl;
 import main.com.cineramamaps.constant.GPSTracker;
@@ -139,6 +135,8 @@ public class PlacesFragment extends Fragment implements OnMapReadyCallback, Goog
     String cityid = "";
     SessionManager session;
     ProgressBar progressbar;
+    LinearLayout progressContainer;
+    TextView progressText;
     private String language = "";
     MyLanguageSession myLanguageSession;
     private GoogleMap gmap;
@@ -149,7 +147,8 @@ public class PlacesFragment extends Fragment implements OnMapReadyCallback, Goog
     TextView restname_tv, location_tv, distance_tv;
     Marker googlemarker_pos, my_job_location_marker;
     private static final float MIN_ZOOM_LEVEL = 10.0f;
-    private static final float MAX_ZOOM_BEFORE_HIDE = 12.0f; // Hide pins above this zoom level
+    private static final float MAX_ZOOM_BEFORE_HIDE = 12.0f;
+    private int totalPlaces = 0;
     TagType tag = TagType.alltags;
     private List<Tag> tagList = new ArrayList<>();
     String tagColors = "";
@@ -163,27 +162,11 @@ public class PlacesFragment extends Fragment implements OnMapReadyCallback, Goog
     private static final int MAX_MARKERS_PER_BATCH = 20;
     private Handler markerBatchHandler = new Handler(Looper.getMainLooper());
 
-    private boolean dataLoaded = false;
-
     @Override
     public void onResume() {
         super.onResume();
         listviewbut.setVisibility(View.GONE);
-        // Only load data when fragment is actually visible to user (lazy load)
-        if (isResumed() && getUserVisibleHint() && !dataLoaded) {
-            getCountryMaps();
-            dataLoaded = true;
-        }
-    }
-
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        // Load data when user actually switches to PLACES tab
-        if (isVisibleToUser && isResumed() && !dataLoaded) {
-            getCountryMaps();
-            dataLoaded = true;
-        }
+        getCountryMaps();
     }
 
     public PlacesFragment(ArrayList<Menudata> menulist, String image, String cityid) {
@@ -211,6 +194,8 @@ public class PlacesFragment extends Fragment implements OnMapReadyCallback, Goog
 
         session = SessionManager.get(getActivity());
         progressbar = view.findViewById(R.id.progressbar);
+        progressContainer = view.findViewById(R.id.progressContainer);
+        progressText = view.findViewById(R.id.progressText);
         listviewbut = view.findViewById(R.id.listviewbut);
         providerrecyclerview = view.findViewById(R.id.providerrecyclerview);
         markerlay = view.findViewById(R.id.markerlay);
@@ -238,119 +223,79 @@ public class PlacesFragment extends Fragment implements OnMapReadyCallback, Goog
     }
 
     private void getCountryMaps() {
-        progressbar.setVisibility(View.VISIBLE);
+        progressContainer.setVisibility(View.VISIBLE);
+        progressbar.setProgress(0);
+        progressText.setText("0%");
+        markersLoaded = 0;
 
-        // 1) Try cache first for instant load
-        Executors.newSingleThreadExecutor().execute(() -> {
-            PlacesEntity cached = AppDatabase.getInstance(requireContext())
-                    .placesDao()
-                    .getPlacesByCity(cityid);
-
-            if (getActivity() == null) return;
-            getActivity().runOnUiThread(() -> {
-                if (cached != null) {
-                    File file = new File(cached.getFilePath());
-                    if (file.exists()) {
-                        try {
-                            String jsonData = JsonCacheUtils.readJsonFromFile(cached.getFilePath());
-                            loadPlacesFromJson(jsonData);
-                            progressbar.setVisibility(View.GONE);
-                            Log.d("MiniMap", "Loaded from cache instantly");
-                            return; // Cache loaded, skip API call
-                        } catch (Exception e) {
-                            Log.e("MiniMap", "Cache read error", e);
-                        }
-                    }
-                }
-
-                // 2) No cache — fetch from API
-                fetchPlacesFromApi();
-            });
-        });
-    }
-
-    private void fetchPlacesFromApi() {
         ApiCall.get().Create().getCityMapsDetails(getProductParam("Item")).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                progressbar.setVisibility(View.GONE);
-                if (response.isSuccessful() && response.body() != null) {
+                Log.e("GetProducts  ", " >> " + response);
+                if (response.isSuccessful()) {
                     try {
                         String responseData = response.body().string();
+                        Log.i("-------------PLACES-----------", responseData);
+                        JSONObject object = new JSONObject(responseData);
 
-                        // Save to cache for next time
-                        Executors.newSingleThreadExecutor().execute(() -> {
+                        if (object.getString("status").equalsIgnoreCase("1")) {
+                            PlacesBean successData = new Gson().fromJson(responseData, PlacesBean.class);
+                            listt.clear();
+                            listt = successData.getResult().getPlaceDetails();
+                            totalPlaces = listt.size();
+
+                            boolean isArabic = language.equalsIgnoreCase("ar");
+
+                            AllRestaurnatAdapter adapter = new AllRestaurnatAdapter(
+                                    getActivity(),
+                                    successData.getResult().getTags(),
+                                    tagList,
+                                    isArabic,
+                                    tagColor -> {
+                                        tag = TagType.selectedtags;
+                                        filterMarkersByTag(tagColor);
+                                    }
+                            );
+                            providerrecyclerview.setAdapter(adapter);
+
+                            // Update progress: data loaded = 30%
+                            progressbar.setProgress(30);
+                            progressText.setText("30%");
+
                             try {
-                                String filePath = JsonCacheUtils.saveJsonToFile(
-                                        requireContext(), cityid, responseData);
-                                PlacesEntity entity = new PlacesEntity();
-                                entity.setCityId(cityid);
-                                entity.setFilePath(filePath);
-                                entity.setTimestamp(System.currentTimeMillis());
-                                AppDatabase.getInstance(requireContext()).placesDao().insert(entity);
-                            } catch (Exception ignored) {}
-                        });
+                                markerList.clear();
+                                if (gmap != null) {
+                                    gmap.clear();
+                                }
 
-                        loadPlacesFromJson(responseData);
+                                // Load markers in batches to prevent ANR
+                                loadMarkersInBatches(listt);
+
+                                if (!listt.isEmpty()) {
+                                    LatLng latLng = new LatLng(
+                                            Double.parseDouble(listt.get(listt.size() - 1).getLat()),
+                                            Double.parseDouble(listt.get(listt.size() - 1).getLon())
+                                    );
+                                    CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 10);
+                                    gmap.animateCamera(cameraUpdate);
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                } else {
+                    progressContainer.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                progressbar.setVisibility(View.GONE);
+                progressContainer.setVisibility(View.GONE);
             }
         });
-    }
-
-    private void loadPlacesFromJson(String responseData) {
-        try {
-            JSONObject object = new JSONObject(responseData);
-            if (!object.getString("status").equalsIgnoreCase("1")) return;
-
-            PlacesBean successData = new Gson().fromJson(responseData, PlacesBean.class);
-            listt.clear();
-            listt = successData.getResult().getPlaceDetails();
-
-            boolean isArabic = language.equalsIgnoreCase("ar");
-
-            AllRestaurnatAdapter adapter = new AllRestaurnatAdapter(
-                    getActivity(),
-                    successData.getResult().getTags(),
-                    tagList,
-                    isArabic,
-                    tagColor -> {
-                        tag = TagType.selectedtags;
-                        filterMarkersByTag(tagColor);
-                    }
-            );
-            providerrecyclerview.setAdapter(adapter);
-
-            try {
-                markerList.clear();
-                if (gmap != null) {
-                    gmap.clear();
-                }
-
-                // Load markers with custom icons in batches
-                loadMarkersInBatches(listt);
-
-                if (!listt.isEmpty()) {
-                    LatLng latLng = new LatLng(
-                            Double.parseDouble(listt.get(listt.size() - 1).getLat()),
-                            Double.parseDouble(listt.get(listt.size() - 1).getLon())
-                    );
-                    CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 10);
-                    gmap.animateCamera(cameraUpdate);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     private HashMap<String, String> getProductParam(String type) {
@@ -370,7 +315,7 @@ public class PlacesFragment extends Fragment implements OnMapReadyCallback, Goog
         gmap.getUiSettings().setMapToolbarEnabled(false);
         gmap.getUiSettings().setZoomControlsEnabled(true);
 
-        // Clean mini-map: hide Google POIs, transit, business labels
+        // Hide Google POIs (coffee shops, restaurants) and transit
         try {
             String style = "[{\"featureType\":\"poi\",\"stylers\":[{\"visibility\":\"off\"}]},"
                     + "{\"featureType\":\"transit\",\"stylers\":[{\"visibility\":\"off\"}]}]";
@@ -419,18 +364,14 @@ public class PlacesFragment extends Fragment implements OnMapReadyCallback, Goog
                 placeRenderer.updateZoomState(currentZoom >= 14.0f);
             }
 
-            // Hide all pins when zoom level reaches threshold
+            // Hide all pins when zoom level reaches 12 (client requirement)
             boolean shouldHide = currentZoom >= MAX_ZOOM_BEFORE_HIDE;
             for (Marker marker : markerList) {
                 marker.setVisible(!shouldHide);
             }
         });
 
-        // Load data only if not already loaded by lazy loading
-        if (!dataLoaded) {
-            getCountryMaps();
-            dataLoaded = true;
-        }
+        getCountryMaps();
     }
 
     private void setupClusterManager() {
@@ -450,6 +391,15 @@ public class PlacesFragment extends Fragment implements OnMapReadyCallback, Goog
             return clickOnMapIcon(firstItem);
         });
 
+        // Set camera idle listener with zoom-based icon swapping
+        gmap.setOnCameraIdleListener(() -> {
+            clusterManager.onCameraIdle();
+            float currentZoom = gmap.getCameraPosition().zoom;
+            boolean shouldBeZoomed = currentZoom >= 14.0f;
+            if (placeRenderer != null) {
+                placeRenderer.updateZoomState(shouldBeZoomed);
+            }
+        });
     }
 
     // Load markers in batches
@@ -703,9 +653,22 @@ public class PlacesFragment extends Fragment implements OnMapReadyCallback, Goog
             clusterManager.cluster();
         }
 
-        // Update progress
-        if (markersLoaded % 10 == 0 && markersLoaded > 0) {
-            Log.d("Progress", "Markers loaded: " + markersLoaded + "/" + listt.size());
+        // Update progress bar (30% for data load + 70% for markers)
+        if (totalPlaces > 0) {
+            int markerProgress = (int) (30 + (70.0 * markersLoaded / totalPlaces));
+            progressbar.setProgress(Math.min(markerProgress, 100));
+            progressText.setText(Math.min(markerProgress, 100) + "%");
+        }
+
+        // All markers loaded — hide progress and do final cluster
+        if (markersLoaded >= totalPlaces) {
+            progressbar.setProgress(100);
+            progressText.setText("100%");
+            // Small delay so user sees 100% before hiding
+            new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                progressContainer.setVisibility(View.GONE);
+            }, 500);
+            clusterManager.cluster();
         }
     }
 
@@ -731,13 +694,8 @@ public class PlacesFragment extends Fragment implements OnMapReadyCallback, Goog
         ImageView ppp = markerLayout.findViewById(R.id.ppp);
         OutlinedTextView outlinedText = markerLayout.findViewById(R.id.placeTitle);
 
-        String name = "en".equals(myLanguageSession.getLanguage()) ? placeDetail.getPlaceName() : placeDetail.getPlaceNameAr();
-        outlinedText.setText(name);
-        if (zoom > 16) {
-            outlinedText.setAlpha(1);
-        } else {
-            outlinedText.setAlpha(0);
-        }
+        // Hide titles on mini-map
+        outlinedText.setVisibility(View.GONE);
 
         if (placeDetail.getShowOnlyIcon().equals("1")) {
             if (placeDetail.getTagDetails() != null) {
@@ -810,11 +768,8 @@ public class PlacesFragment extends Fragment implements OnMapReadyCallback, Goog
         ImageView ppp = markerLayout.findViewById(R.id.ppp);
         OutlinedTextView outlinedText = markerLayout.findViewById(R.id.placeTitle);
 
-        String name = "en".equals(myLanguageSession.getLanguage()) ?
-                placeDetail.getPlaceName() : placeDetail.getPlaceNameAr();
-
-        outlinedText.setText(name);
-        outlinedText.setAlpha(zoom > 16 ? 1 : 0);
+        // Hide titles on mini-map
+        outlinedText.setVisibility(View.GONE);
 
         if (placeDetail.getShowOnlyIcon().equals("1")) {
 
